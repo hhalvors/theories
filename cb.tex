@@ -1,0 +1,124 @@
+\documentclass[12pt]{article}
+\usepackage{amsfonts}
+\title{Cantor-Bernstein for Theories}
+\author{Princeton Logic Group}
+\usepackage{amsthm}
+\usepackage[natbib=true,style=chicago-authordate,sorting=nyt]{biblatex}
+% \usepackage{biblatex-chicago}
+\addbibresource{/Users/hhalvors/org/ref/master.bib}
+\newtheorem*{conj}{Conjecture}
+\newtheorem*{prop}{Proposition}
+\newtheorem*{fact}{Fact}
+\theoremstyle{definition}
+\newtheorem*{defn}{Definition}
+\begin{document}
+
+%% TO DO: Oligomorphic groups
+
+%% TO DO: Ahlbrandt and Ziegler results
+
+%% TO DO: put this on git-hub
+
+\maketitle
+
+The purpose of this note is to ask: under what conditions could a pair
+of theories $(T_1,T_2)$ fail to have the Cantor-Bernstein or
+co-Cantor-Bernstein property?
+
+\begin{defn} We say that the pair $(T_1,T_2)$ has the Cantor-Bernstein
+  property just in case: if $T_1$ and $T_2$ are mutually faithfully
+  interpretable, then $T_1$ and $T_2$ are bi-interpretable. In other
+  words: if $(T_1,T_2)$ does not have the Cantor-Bernstein property
+  then (a) $T_1$ and $T_2$ are mutually faithfully interpretable, and
+  (b) $T_1$ and $T_2$ are not bi-interpretable. \end{defn}
+
+Here ``mutually faithfully interpretable'' means that there are
+conservative (strong, equality preserving) translations $F:T_1\to T_2$
+and $G:T_2\to T_1$.
+
+\begin{defn} We say that the pair $(T_1,T_2)$ has the
+  co-Cantor-Bernstein property just in case: if there are essentially
+  surjective translations $F:T_1\to T_2$ and $G:T_2\to T_1$, then
+  $T_1$ and $T_2$ are bi-interpretable. \end{defn}
+
+
+\section{Examples of theory pairs that are not CB}
+
+
+\begin{enumerate}
+\item $T_1$ is the empty theory on a countably infinite propositional
+  signature. $T_2$ is the ``fan theory'' with axioms $p_0\vdash p_i$,
+  for $i\geq 0$.
+\item The many examples of pairs of set theories described in \citep[p
+  8]{hamkins}.
+\item The pair of theories described in \citep{andreka}.
+\end{enumerate}
+
+
+\section{Results}
+
+\begin{prop} If $T_1$ or $T_2$ is complete, then $(T_1,T_2)$ has the
+  co-CB property. \end{prop}
+
+\begin{proof} If $T_1$ is complete, then every translation
+  $F:T_1\to T_2$ is conservative. So if $F:T_1\to T_2$ is eso, then
+  $F$ is a strong equivalence, i.e.\ $T_1$ and $T_2$ are
+  bi-interpretable. \end{proof}
+
+Recall that $F:T_1\to T_2$ is conservative iff $F^*:M(T_2)\to M(T_1)$
+is a full functor \citep{barrett2020}. Recall also that if $F$ is a
+strong (equality-preserving) translation, then $F^*$ preserves
+cardinality of models. In particular, if $T_1$ and $T_2$ are
+$\aleph _0$-categorical theories, then a translation $F:T_1\to T_2$
+induces a group homomorphism
+$F^*:\mathrm{Aut}(M_2)\to \mathrm{Aut}(M_1)$, and $F$ is conservative
+iff $F^*$ is surjective. (In fact, $\mathrm{Aut}(M_i)$ is naturally a
+topological group, and I conjecture that $F^*$ is a continuous group
+homomorphism.)
+
+Recall that if $T$ has countable signature, and if $T$ is
+$\aleph _0$-categorical, then $T$ is complete. The following result
+would be interesting because an $\aleph _0$-categorical theory is
+essentially characterized by a topological group, viz.\ the group of
+automorphisms of its unique (up to isomorphism) countable model.
+
+
+\begin{conj} There are $\aleph _0$-categorical theories $T_1$ and
+  $T_2$ that do not have the CB property. \end{conj}
+
+\section{Groups that are not CB}
+
+\begin{defn} Let $P(\mathbb{N})$ be the permutation group of the
+  natural numbers, equipped with the topology of pointwise
+  convergence. (TO DO: explain the sense in which this topology on
+  $P(\mathbb{N})$ is definable from the theory of infinite
+  sets. Explain more generally the sense in which for a
+  $\Sigma$-structure $M$, $\mathrm{Aut}(M)$ is naturally a topological
+  group.) \end{defn}
+
+\begin{fact} Let $G$ be a subgroup of $P(\mathbb{N})$. Then $G$ is the
+  automorphism group of an $\aleph _0$-categorical theory iff $G$ is
+  a closed subset of $P(\mathbb{N})$. \end{fact}
+
+\begin{conj} There are closed subgroups $G$ and $H$ of
+  $P(\mathbb{N})$ such that $G$ is isomorphic to a closed subgroup of
+  $H$ and vice versa, but $G$ and $H$ are not
+  isomorphic. \end{conj}
+
+\begin{fact} There are closed subgroups $G$ and $H$ of $P(\mathbb{N})$
+  that are isomorphic qua groups but not as topological
+  groups. Accordingly, the corresponding theories are not
+  bi-interpretable. \end{fact} 
+
+
+
+
+\printbibliography 
+
+
+
+\end{document} 
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
