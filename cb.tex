@@ -1,4 +1,5 @@
 \documentclass[12pt]{article}
+\PassOptionsToPackage{hyphens}{url}
 \usepackage{amsfonts}
 \title{Cantor-Bernstein for Theories}
 \author{Princeton Logic Group}
@@ -124,7 +125,7 @@ $\aleph _0$-categorical structure $M$.
 
 \begin{enumerate}
 \item The group $S_\infty$ of finite permutations of $\mathbb{N}$ and
-  the alternating grooup $A_\infty$. See \newline \url{https://math.stackexchange.com/questions/1259081/if-there-are-injective-homomorphisms-between-two-groups-in-both-directions-are}
+  the alternating grooup $A_\infty$. See  \url{https://math.stackexchange.com/questions/1259081/if-there-are-injective-homomorphisms-between-two-groups-in-both-directions-are}
 \item Infinite direct sums of $\mathbb{Z}_{2^i}$.
 \item The free group on $2$ generators and the free group on $3$ generators.  
 \end{enumerate}
@@ -150,6 +151,37 @@ like our weak translations than like our strong translations.
   of $P(\mathbb{N})$ that are isomorphic qua groups but not as
   topological groups. Hence, the corresponding structures are not
   bi-interpretable. \end{prop}
+
+\section{$\aleph _0$-categorical theories}
+
+For this discussion, we restrict to theories with countable
+signatures. In this case, an $\aleph _0$-categorical theory is
+automatically complete.
+
+Question: How can we characterize the syntactic categories of
+$\aleph _0$-categorical theories? (Hint: Look at the Ryll-Nardzewski
+theorem \url{https://en.wikipedia.org/wiki/Omega-categorical_theory}.)
+
+TO DO: Establish a correspondence between the $2$-category of
+$\aleph _0$-categorical theories (with weak translations) and some
+subcategory of the $2$-category of topological groups. (Recall that
+every group is a category, and group homomorphisms are functors.)
+
+Note that all translations between such theories are conservative. 
+
+
+
+\begin{conj} If $F:T_1\to T_2$ is a translation then
+  $F^*:G(T_2)\to G(T_1)$ is continuous. \end{conj}
+
+\newcommand{\3}{\mathcal}
+
+\begin{conj} There is a 2-functor $\3F$ from the 2-category of
+  $\aleph _0$-categorical theories and the 2-category of topological
+  groups. \end{conj}
+
+
+
 
 
 
