@@ -134,7 +134,7 @@ $\aleph _0$-categorical structure $M$.
   $\aleph _0$-categorical structures are bi-interpretable iff their
   automorphism groups are isomorphic as topological groups. \end{prop}
 
-I suspect that the previous result can be lifted to
+Conjecture: the previous result can be lifted to
 $\aleph _0$-categorical theories (with countable signature). But we
 need to be careful about terminology. First of all, Ahlbrandt and
 Ziegler are working with a notion of ``interpretation'' between
@@ -143,9 +143,13 @@ Basically, an interpretation $f:M_1\to M_2$ consists of a surjection
 $f:U\to B$ where $U$ is a definable subset of the domain of $M_1$ and
 $B$ is the domain of $M_2$, etc. (Is an interpretation from $M_1$ to
 $M_2$ just a translation in our sense from $Th(M_1)$ to $Th(M_2)$?)
-
 Second, note that Ahlbrandt and Ziegler's interpretations are more
-like our weak translations than like our strong translations. 
+like our weak translations than like our strong translations.
+
+This result would be interesting because it would show that the
+structure of an $\aleph _0$-categorical theory is captured by its
+countable model. i.e., there is no need to look at the models of
+higher cardinality and the arrows between them.
 
 \begin{prop}[\cite{evans1990}] There are closed subgroups $G$ and $H$
   of $P(\mathbb{N})$ that are isomorphic qua groups but not as
@@ -165,19 +169,26 @@ automatically complete.
 
 Question: How can we characterize the syntactic categories of
 $\aleph _0$-categorical theories? (Hint: Look at the Ryll-Nardzewski
-theorem \url{https://en.wikipedia.org/wiki/Omega-categorical_theory}.)
+theorem
+\url{https://en.wikipedia.org/wiki/Omega-categorical_theory}. I
+suspect that the characterization will have something to do with
+finiteness of subobject lattices.)
 
 TO DO: Establish a correspondence between the $2$-category of
 $\aleph _0$-categorical theories (with weak translations) and some
 subcategory of the $2$-category of topological groups. (Recall that
-every group is a category, and group homomorphisms are functors.)
-
-Note that all translations between such theories are conservative. 
+every group is a category, and group homomorphisms are functors.) Note
+that all translations between such theories are conservative.
 
 \newcommand{\3}{\mathcal}
 
+\begin{defn} Given an $\aleph _0$-categorical theory $T$, let
+  $\3G (T)$ be the topological group of automorphisms of its unique
+  countable model. \end{defn}
+
 \begin{conj} If $F:T_1\to T_2$ is a translation then
-  $F^*:\3G (T_2)\to \3G (T_1)$ is continuous. \end{conj}
+  $F^*|_{\3G (T_2)}$ is a continuous homomorphism from $\3G (T_2 )$ to
+  $\3G (T_1)$. \end{conj}
 
 \begin{conj} There is a 2-functor $\3G$ from the 2-category of
   topological groups to the 2-category of $\aleph _0$-categorical
