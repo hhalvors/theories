@@ -152,6 +152,11 @@ like our weak translations than like our strong translations.
   topological groups. Hence, the corresponding structures are not
   bi-interpretable. \end{prop}
 
+The former result is intriguing: there is a group isomorphism
+$\varphi :G\to H$ that does not correspond to a homotopy equivalence
+between the corresponding theories. In short: the arrows between
+models are not enough to capture the structure of the theories.
+
 \section{$\aleph _0$-categorical theories}
 
 For this discussion, we restrict to theories with countable
@@ -169,12 +174,18 @@ every group is a category, and group homomorphisms are functors.)
 
 Note that all translations between such theories are conservative. 
 
-
+\newcommand{\3}{\mathcal}
 
 \begin{conj} If $F:T_1\to T_2$ is a translation then
-  $F^*:G(T_2)\to G(T_1)$ is continuous. \end{conj}
+  $F^*:\3G (T_2)\to \3G (T_1)$ is continuous. \end{conj}
 
-\newcommand{\3}{\mathcal}
+\begin{conj} There is a 2-functor $\3G$ from the 2-category of
+  topological groups to the 2-category of $\aleph _0$-categorical
+  theories. (This is not stated correctly yet: we should not expect
+  all topological groups to occur in the domain. It is only the
+  ``nice'' topological groups, i.e.\ the automorphism groups of
+  $\aleph _0$-categorical theories.) \end{conj}
+
 
 \begin{conj} There is a 2-functor $\3F$ from the 2-category of
   $\aleph _0$-categorical theories and the 2-category of topological
