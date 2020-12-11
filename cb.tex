@@ -10,6 +10,7 @@
 \newtheorem*{conj}{Conjecture}
 \newtheorem*{prop}{Proposition}
 \newtheorem*{fact}{Fact}
+\newtheorem*{cor}{Corollary}
 \theoremstyle{definition}
 \newtheorem*{defn}{Definition}
 \newcommand{\3}{\mathcal}
@@ -50,11 +51,13 @@ and $G:T_2\to T_1$.
 \begin{enumerate}
 \item $T_1$ is the empty theory on a countably infinite propositional
   signature. $T_2$ is the ``fan theory'' with axioms $p_0\vdash p_i$,
-  for $i\geq 0$. The fact that these theories are propositional does
-  not (I think) indicate that they are pathological. However, these
-  theories are incomplete and the second one is not finitely
-  axiomatizable. In fact, the second theory is not equivalent to any
-  finitely axiomatized theory.
+  for $i\geq 0$. These theories are counterexamples both to the CB and
+  the co-CB properties.
+
+  But are these theories ``pathological'' in some sense? The fact that
+  these theories are propositional should not (I think) be seen as a
+  pathology. However, these theories are incomplete, and the second of
+  them is not finitely axiomatizable.
 \item The many examples of pairs of set theories described in \citep[p
   8]{hamkins}.
 \item The pair of theories described in \citep{andreka}.
@@ -99,6 +102,57 @@ automorphisms of its unique (up to isomorphism) countable model.
 
 \begin{conj} There are essentially finitely axiomatizable theories
   $T_1$ and $T_2$ that do not have the CB property. \end{conj}
+
+\section{Conjecture: co-CB fails only for theories with many models}
+
+\begin{prop} If $F:T_1\to T_2$ is essentially surjective, then for any
+  fixed cardinal number $\kappa$, $T_1$ has more models (up to
+  isomorphism) of size $\kappa$ than~$T_2$. \end{prop}
+
+\begin{proof} Recall that the dual functor $F^*$ is always
+  faithful. If $F:T_1\to T_2$ is eso, then $F^*$ is also full
+  \citep[Prop 6.6.13]{tlps}. In particular, for any models $M,N$ of
+  $T_2$, if $F^*(M)$ is isomorphic to $F^*(N)$, then $M$ is isomorphic
+  to $N$. Now fix a cardinal number $\kappa$, and let
+  $[M(T_i)]_\kappa$ be the set of isomorphism classes of models of
+  $T_i$ of cardinality $\kappa$. Then $F^*$ induces a one-to-one
+  mapping from $[M(T_2)]_\kappa$ into $[M(T_1)]_\kappa$. \end{proof}
+
+\begin{prop} Suppose that $T_2$ has finitely many non-isomorphic
+  models of each cardinality. If $F:T_1\to T_2$ and $G:T_2\to T_1$ are
+  essentially surjective, then $(F^*,G^*)$ is an equivalence of
+  categories. \end{prop}
+
+\begin{proof} It will suffice to show that $F^*$ is essentially
+  surjective. By the previous proof, $G^*$ induces an injection of
+  $[M(T_1)]_\kappa$ into $[M(T_2)]_\kappa$. Since the latter is
+  finite, so is the former. Since $F^*$ is an injection of one finite
+  set into a not-larger finite set, it follows that $F^*$ is
+  bijection. Therefore $F^*$ is essentially surjective. \end{proof}
+
+\begin{conj} If $(T_1,T_2)$ violate the co-CB property then there is a
+  cardinal number $\kappa$ such that $T_1$ and $T_2$ have infinitely
+  many non-isomorphic models of size $\kappa$. \end{conj}
+
+I think this conjecture follows from the previous proposition, but my
+intuition here is that when theories have finitely many non-isomorphic
+models (of each fixed cardinality), then categorical equivalence
+implies bi-interpretability.
+
+\begin{conj} Suppose that $T_1$ and $T_2$ have finitely many
+  non-isomorphic models of each fixed cardinal number. If
+  $F:T_1\to T_2$ and $G:T_2\to T_1$ are translations such that
+  $(F^*,G^*)$ is an equivalence of categories, then $(F,G)$ is a
+  homotopy equivalence. \end{conj}
+
+
+TO DO: I would like to come up with a similar necessary condition for
+$T_1$ and $T_2$ violating the CB property. However, we do not yet have
+any interesting result of the form: ``if $T_1$ or $T_2$ is \dots and
+$F:T_1\to T_2$ is conservative then $F^*:M(T_2)\to M(T_1)$ is \dots
+.''
+
+
 
 \section{Groups that are not CB}
 
