@@ -12,6 +12,7 @@
 \newtheorem*{fact}{Fact}
 \theoremstyle{definition}
 \newtheorem*{defn}{Definition}
+\newcommand{\3}{\mathcal}
 \begin{document}
 
 %% TO DO: Oligomorphic groups
@@ -41,6 +42,8 @@ and $G:T_2\to T_1$.
   co-Cantor-Bernstein property just in case: if there are essentially
   surjective translations $F:T_1\to T_2$ and $G:T_2\to T_1$, then
   $T_1$ and $T_2$ are bi-interpretable. \end{defn}
+
+
 
 
 \section{Examples of theory pairs that are not CB}
@@ -138,13 +141,20 @@ Conjecture: the previous result can be lifted to
 $\aleph _0$-categorical theories (with countable signature). But we
 need to be careful about terminology. First of all, Ahlbrandt and
 Ziegler are working with a notion of ``interpretation'' between
-structures of one language and structures of another language.
-Basically, an interpretation $f:M_1\to M_2$ consists of a surjection
-$f:U\to B$ where $U$ is a definable subset of the domain of $M_1$ and
-$B$ is the domain of $M_2$, etc. (Is an interpretation from $M_1$ to
-$M_2$ just a translation in our sense from $Th(M_1)$ to $Th(M_2)$?)
-Second, note that Ahlbrandt and Ziegler's interpretations are more
-like our weak translations than like our strong translations.
+structures of one language and structures of another language: given a
+$\Sigma _1$-structure $\3M _1$ and a $\Sigma _2$-structure $\3M _2$,
+and interpretation $f:\3M_1\to \3M_2$ consists of a surjection
+$f:U\to M_2$ where $U$ is a definable subset of the domain of $\3M_1$
+and $M_2$ is the domain of $\3M_2$, etc.
+
+\begin{conj} An interpretation from $\3M_1$ to $\3M_2$ is a
+  translation in our sense from $Th(\3M_1)$ to $Th(\3M_2)$. \end{conj}
+
+The following proposition follows immediately from the fact that
+$\aleph _0$-categorical theories are complete.
+
+\begin{prop} If $T$ is $\aleph _0$-categorical with unique model
+  $\3M$, then $T$ is logically equivalent to $Th(\3M )$. \end{prop}
 
 This result would be interesting because it would show that the
 structure of an $\aleph _0$-categorical theory is captured by its
@@ -164,23 +174,25 @@ models are not enough to capture the structure of the theories.
 \section{$\aleph _0$-categorical theories}
 
 For this discussion, we restrict to theories with countable
-signatures. In this case, an $\aleph _0$-categorical theory is
-automatically complete.
+signatures. In this case, the downward L{\"o}wenheim-Skolem theorem
+shows that an $\aleph _0$-categorical theory is complete.
 
 Question: How can we characterize the syntactic categories of
 $\aleph _0$-categorical theories? (Hint: Look at the Ryll-Nardzewski
-theorem
-\url{https://en.wikipedia.org/wiki/Omega-categorical_theory}. I
-suspect that the characterization will have something to do with
-finiteness of subobject lattices.)
+theorem \url{https://en.wikipedia.org/wiki/Omega-categorical_theory}
+and \citep[p 30]{cameron1990}. I suspect that the characterization
+will have something to do with finiteness of subobject lattices.)
 
 TO DO: Establish a correspondence between the $2$-category of
-$\aleph _0$-categorical theories (with weak translations) and some
-subcategory of the $2$-category of topological groups. (Recall that
-every group is a category, and group homomorphisms are functors.) Note
-that all translations between such theories are conservative.
+$\aleph _0$-categorical theories and some subcategory of the
+$2$-category of topological groups. Note 1: every group is a category,
+and group homomorphisms are functors.  Note 2: all translations
+between such theories are conservative. It will be helpful to look at
+pages 106--107 of \citep{cameron1990} where he describes conditions on
+a topological group $G$ that ensure it corresponds to a categorical
+theory.
 
-\newcommand{\3}{\mathcal}
+
 
 \begin{defn} Given an $\aleph _0$-categorical theory $T$, let
   $\3G (T)$ be the topological group of automorphisms of its unique
