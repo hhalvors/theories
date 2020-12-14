@@ -14,6 +14,8 @@
 \newtheorem*{cor}{Corollary}
 \theoremstyle{definition}
 \newtheorem*{defn}{Definition}
+\theoremstyle{remark}
+\newtheorem*{note}{Remark}
 \newcommand{\3}{\mathcal}
 \begin{document}
 
@@ -106,9 +108,18 @@ automorphisms of its unique (up to isomorphism) countable model.
 
 \section{Conjecture: co-CB fails only for theories with many models}
 
+\begin{note} For a theory $T$ and a cardinal number $\kappa$, let
+  $I(T,\kappa )$ be the number of non-isomorphic countable models of
+  $T$. Interestingly, $I(T,\aleph _0)$ can be countably infinite, or
+  any finite cardinal besides $2$. See \citep[p
+  155ff]{marker2006}. \end{note}
+
+
+
+
 \begin{prop} If $F:T_1\to T_2$ is essentially surjective, then for any
-  fixed cardinal number $\kappa$, $T_1$ has more models (up to
-  isomorphism) of size $\kappa$ than~$T_2$. \end{prop}
+  fixed cardinal number $\kappa$,
+  $I(T_2, \kappa )\leq I(T_1, \kappa )$. \end{prop}
 
 \begin{proof} Recall that the dual functor $F^*$ is always
   faithful. If $F:T_1\to T_2$ is eso, then $F^*$ is also full
