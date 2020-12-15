@@ -8,11 +8,11 @@
 \usepackage[natbib=true,style=chicago-authordate,sorting=nyt]{biblatex}
 % \usepackage{biblatex-chicago}
 \addbibresource{/Users/hhalvors/org/ref/master.bib}
-\newtheorem{conj}{Conjecture}
 \newtheorem{prop}{Proposition}
-\newtheorem{fact}{Fact}
-\newtheorem{cor}{Corollary}
-\newtheorem{lemma}{Lemma}
+\newtheorem{fact}[prop]{Fact}
+\newtheorem{cor}[prop]{Corollary}
+\newtheorem{conj}[prop]{Conjecture}
+\newtheorem{lemma}[prop]{Lemma}
 \theoremstyle{definition}
 \newtheorem*{defn}{Definition}
 \theoremstyle{remark}
@@ -173,6 +173,25 @@ $M\vDash\phi$ and $N\vDash\neg\phi$.
   \[ f(a,b) \: \leq \: f(\phi (a),\phi (b)) ,\] for all $a,b\in
   C_0$. By the above lemma, $f(a,b)=f(\phi (a),\phi (b))$, and it
   follows that $F$ is full. \end{proof}
+
+\begin{conj} Suppose that $F:T_1\to T_2$ is a strong translation,
+  i.e.\ one-dimensional, equality preserving, and with trivial domain
+  formula. If $F$ is one-half of a weak equivalence, then $F$ is
+  one-half of a strong equivalence. \end{conj}
+
+\begin{proof}[Sketch of proof] We show that $F$ is conservative and
+  essentially surjective. Let $G:T_2\to T_1$ be a translation such
+  that $GF\simeq 1_{T_1}$ and $FG\simeq 1_{T_2}$. Let $\phi$ be a
+  $\Sigma _1$-sentence such that $T_2\vdash F(\phi )$. Then
+  $T_1\vdash GF(\phi )$, and (since the relevant t-map is trivial)
+  $T_1\vdash \phi$. Therefore $F$ is conservative. Now let $\psi (x)$
+  be a $\Sigma _2$-formula, for simplicity with one free
+  variable. Then there a t-map $\chi (x,y)$ such that
+  \[ T_2\: \vdash \: \chi (x,y)\to (\psi (x)\leftrightarrow (FG\psi
+    )(y)) ,
+  \] and $T_2$ implies that $\chi$ is a bijection on the domain. TO BE CONTINUED
+ 
+\end{proof}
 
 \begin{prop} Let $T_1$ and $T_2$ be proper theories such that $M(T_1)$
   and $M(T_2)$ are object-finite. Then $(T_1,T_2)$ has the
