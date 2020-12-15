@@ -1,21 +1,22 @@
 \documentclass[12pt]{article}
 \usepackage{doi}
 \PassOptionsToPackage{hyphens}{url}
-\usepackage{amsfonts,amsmath,extarrows}
+\usepackage{amsfonts,amsmath,extarrows,amssymb}
 \title{Cantor-Bernstein for Theories}
 \author{Princeton Logic Group}
 \usepackage{amsthm}
 \usepackage[natbib=true,style=chicago-authordate,sorting=nyt]{biblatex}
 % \usepackage{biblatex-chicago}
 \addbibresource{/Users/hhalvors/org/ref/master.bib}
-\newtheorem*{conj}{Conjecture}
-\newtheorem*{prop}{Proposition}
-\newtheorem*{fact}{Fact}
-\newtheorem*{cor}{Corollary}
+\newtheorem{conj}{Conjecture}
+\newtheorem{prop}{Proposition}
+\newtheorem{fact}{Fact}
+\newtheorem{cor}{Corollary}
 \theoremstyle{definition}
 \newtheorem*{defn}{Definition}
 \theoremstyle{remark}
 \newtheorem*{note}{Remark}
+\newtheorem*{example}{Example}
 \newcommand{\3}{\mathcal}
 \begin{document}
 
@@ -66,8 +67,93 @@ and $G:T_2\to T_1$.
 \item The pair of theories described in \citep{andreka}.
 \end{enumerate}
 
+\section{Cantor-Bernstein}
 
-\section{Results}
+The first thing I would like to show: for theories $T_1$ and $T_2$ to
+violate Cantor-Bernstein, both have to have infinitely many
+non-isomorphic models. (This fact is trivial in the case that $T_1$
+and $T_2$ have models of infinite cardinality.)
+
+\begin{note} Let $F:T_1\to T_2$ be a translation, and let
+  $F^*:M(T_2)\to M(T_1)$ be the dual functor. Recall that:
+  \begin{itemize}
+  \item $F^*(M)\vDash \phi$ iff $M\vDash F(\phi )$, for any
+    $\Sigma _1$-sentence $\phi$.
+    \item $F^*$ is faithful by definition.
+    \item $F^*$ reflects isomorphisms in the sense that if
+      $F^*(j):F^*(M)\to F^*(N)$ is an isomorphism, then $j:M\to N$ is
+      an isomorphism. This follows from the fact that an elementary
+      embedding is an isomorphism iff it is surjective, and from the
+      fact that the underlying function of $F^*(j)$ is none other than
+      the underlying function of $j$.
+
+      Note however: $F^*$ can still map non-isomorphic models to
+      isomorphic models. For example: let $T_1$ be the theory that
+      says that there are two things (in empty signature), let $T_2$
+      be the theory that says that there are two things (in signature
+      with a unary predicate symbol $P$), and let $F:T_1\to T_2$ be
+      the inclusion. Let $M$ be a model in which the extension of $P$
+      is empty, and let $N$ be a model in which the extension of $P$
+      is non-empty. Then $F^*(M)$ is isomorphic to $F^*(N)$ although
+      $M$ is not isomorphic to $N$.
+    \end{itemize} \end{note}
+
+\begin{defn} We say that a category $C$ is \emph{object-finite} just
+  in case it has only finitely many objects up to
+  isomorphism. \end{defn}
+
+Let $T$ be a theory. If $M(T)$ is object-finite then the
+L{\"o}wenheim-Skolem theorem implies that every model of $T$ has
+finite cardinality. From this it follows that every hom set in $M(T)$
+is finite. Furthermore, since for finite structures, elementary
+equivalence implies isomorphism, it follows that for any
+non-isomorphic $M,N$ in $M(T)$, there is a sentence $\phi$ such that
+$M\vDash\phi$ and $N\vDash\neg\phi$.
+
+\begin{prop} Let $T_1$ be a theory such that $M(T_1)$ is
+  object-finite, and let $F:T_1\to T_2$ be a translation. If $F$ is
+  conservative then $F^*:M(T_2)\to M(T_1)$ is essentially
+  surjective. \end{prop}
+\begin{proof} (1) We prove the contrapositive. If $F^*:M(T_2)\to M(T_1)$
+  is not eso, then there is a model $M$ of $T_1$ that is not
+  isomorphic to any model of the form $F^*(N)$, with $N$ a model of
+  $T_2$. By the preceding discussion, there is a sentence $\phi$ such
+  that $M\vDash \phi$ but $F^*(N)\vDash\neg \phi$, for all models $N$
+  of $T_2$. Hence $N\vDash F(\neg \phi )$ for all models $N$ of $T_2$,
+  and by completeness, $T_2\vdash F(\neg \phi )$. Therefore $F$ is not
+  conservative. \end{proof}
+
+\begin{note} Let $C$ and $D$ be categories with respective object sets
+  $C_0$ and $D_0$. Let $[C_0]$ and $[D_0]$ be the corresponding sets
+  of equivalence classes of isomorphic objects. Each functor
+  $F:C\to D$ induces a function $F_0:[C_0]\to [D_0]$, and $F_0$ is
+  surjective iff $F$ is eso. If $F:C\to D$ and $G:D\to C$ are both
+  eso, then Cantor-Bernstein for finite sets implies that $F_0$ is a
+  bijection. \end{note}
+
+\begin{prop} Let $C$ and $D$ be totally-finite categories. If there
+  are faithful, eso functors $F:C\to D$ and $G:D\to C$, then $C$ and
+  $D$ are equivalent categories. In fact, $F$ itself is one half of an
+  equivalence. \end{prop}
+
+\begin{proof} By the above remark, $F_0:[C_0]\to [D_0]$ is a
+  bijection. Since $F$ is automatically faithful, it will suffice to
+  show that $F$ is full. Here is the idea behind the argument: Take
+  objects $a,b\in C_0$ such that $\mathrm{hom}(a,b)$ has maximum
+  cardinality among hom sets in $C$.  If
+  $F_1:\mathrm{hom}(a,b)\to \mathrm{hom}(Fa,Fb)$ is an injection but
+  not a surjection, then we have a contradiction, since $G_1$ is also
+  an injection from $\mathrm{hom}(Fa,Fb)$ to
+  $\mathrm{hom}(GFa,GFb)$. Hence $F$ is full on these maximum
+  cardinality hom sets.
+
+  TO BE COMPLETED. \end{proof}
+
+\begin{conj} If $M(T_1)$ and $M(T_2)$ are object-finite then
+  $(T_1,T_2)$ has the Cantor-Bernstein property.  \end{conj}
+
+\section{Co-Cantor-Bernstein}
+
 
 \begin{prop} If $T_1$ or $T_2$ is complete, then $(T_1,T_2)$ has the
   co-CB property. \end{prop}
