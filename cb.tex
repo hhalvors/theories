@@ -65,6 +65,28 @@ between $\2{Th}$ and $\2{Coh}$ to make some progress on this issue. In
 particular, we know that a functor in $\2{Coh}$ is an equivalence iff
 it is full, faithful, and essentially surjective.
 
+\begin{example} We show here that for a weak translations
+  $F:T_1\to T_2$, conservative plus essentially surjective does not
+  imply that $F$ is an equivalence. Let
+  $\Sigma _1 = \{ \sigma _1,\sigma _2\}$, let
+  $\Sigma _2= \{ \sigma \}$, and let $T_i$ be the empty theory in
+  $\Sigma _i$. Define a reconstrual $F$ from $\Sigma _1$ to
+  $\Sigma _2$ by setting $F(\sigma _i)=\sigma$, with trivial domain
+  formula. Obviously $F:T_1\to T_2$ is a translation. We observe:
+  \begin{itemize}
+  \item $F$ is essentially surjective.
+  \item $F$ is conservative.
+  \item $F$ is not part of an equivalence. Indeed, for any model $M$
+    of $T_2$, the model $F^*(M)$ assigns the same set to $\sigma _1$
+    and $\sigma _2$, hence $F^*$ is not essentially surjective.
+  \end{itemize}
+  In terms of the syntactic categories $C_{T_1}$ and $C_{T_2}$, we can
+  see that the functor corresponding to $F$ is not full. In
+  particular, if $x_i$ is a variable of sort $\sigma _i$, then there
+  is an arrow from $[\top .Fx_1]$ to $[\top .Fx_2]$ in $C_{T_2}$, but
+  no arrow from $[\top .x_1]$ to $[\top .x_2]$ in
+  $C_{T_1}$.  \end{example}
+
 Now here is my intuition: for a (weak) translation $F:T_1\to T_2$, the
 notion of being conservative still makes sense --- although it may not
 be a very powerful or useful notion. Indeed, to say that $F$ is
@@ -117,10 +139,8 @@ translations, and whose arrows are t-maps.
 \begin{conj} Let $F:T_1\to T_2$ be a translation. Then $F$ is fully
   faithful iff $F$ is conservative. \end{conj}
 
-\begin{proof} Let $X$ be an arbitrary theory, and consider the functor
-  $\2{Th}(X,T_1)\to \2{Th}(X,T_2)$ given on objects (translations) by
-  $G\mapsto F\circ G$ and on arrows (t-maps) by
-  $\chi\mapsto 1_F\ast \chi$. \end{proof}
+NOTE: I now think this conjecture is false. I think that $F$ being
+fully faithful is stronger than $F$ being conservative.
 
 
 
@@ -138,6 +158,8 @@ translations, and whose arrows are t-maps.
   these theories are propositional should not (I think) be seen as a
   pathology. However, these theories are incomplete, and the second of
   them is not finitely axiomatizable.
+\item ZF and ZFC. See
+  \url{https://cs.nyu.edu/pipermail/fom/2010-January/014325.html}
 \item The many examples of pairs of set theories described in \citep[p
   8]{hamkins}.
 \item The pair of theories described in \citep{andreka}.
@@ -325,14 +347,12 @@ automorphisms of its unique (up to isomorphism) countable model.
 
 \section{Conjecture: co-CB fails only for theories with many models}
 
-\begin{note} For a theory $T$ and a cardinal number $\kappa$, let
+\begin{defn} For a theory $T$ and a cardinal number $\kappa$, let
   $I(T,\kappa )$ be the number of non-isomorphic countable models of
-  $T$. Interestingly, $I(T,\aleph _0)$ can be countably infinite, or
-  any finite cardinal besides $2$. See \citep[p
-  155ff]{marker2006}. \end{note}
+  $T$. \end{defn}
 
-
-
+Interestingly, $I(T,\aleph _0)$ can be countably infinite, or any
+finite cardinal besides $2$ \citep[see][p 155ff]{marker2006}.
 
 \begin{prop} If $F:T_1\to T_2$ is essentially surjective, then for any
   fixed cardinal number $\kappa$,
