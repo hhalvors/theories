@@ -51,6 +51,77 @@ sense, to the former?
   surjective translations $F:T_1\to T_2$ and $G:T_2\to T_1$, then
   $T_1$ and $T_2$ are bi-interpretable. \end{defn}
 
+\section{Preliminaries}
+
+\newcommand{\2}{\mathsf}
+
+Let $\2{Th}$ be the $2$-category of coherent theories, where the
+1-cells are translations and the 2-cells are functional relations
+between translations (i.e.\ t-maps). If $F:T_1\to T_2$ is a strong
+translation, then $F$ is an equivalence iff $F$ is conservative and
+essentially surjective. We currently lack a similar decomposition
+theorem for weak translations, although we can exploit the equivalence
+between $\2{Th}$ and $\2{Coh}$ to make some progress on this issue. In
+particular, we know that a functor in $\2{Coh}$ is an equivalence iff
+it is full, faithful, and essentially surjective.
+
+Now here is my intuition: for a (weak) translation $F:T_1\to T_2$, the
+notion of being conservative still makes sense --- although it may not
+be a very powerful or useful notion. Indeed, to say that $F$ is
+conservative basically says that if $F\phi (x)\vdash F\psi (x)$ then
+$\phi (x)\vdash\psi (x)$, and that only tells us something about the
+subobject lattices of the syntactic categories $C_{T_1}$ and
+$C_{T_2}$. In contrast, to say that a logical functor from $C_{T_1}$
+to $C_{T_2}$ is fully faithful means that for any fixed objects
+$[\phi .X]$ and $[\psi .Y]$ of $C_{T_1}$, the map
+\[ \mathrm{hom}\left( [\phi .X] ,[\psi .Y]\right) \: \to \:
+  \mathrm{hom}\left( [F\phi .X] ,[F\psi .Y]\right) ,\] is a
+bijection. The fullness condition implies that the translation is
+conservative, but the faithfulness condition says something more.
+
+The notion of being essentially surjective will also need to be
+generalized. For example, let $T_1$ be the theory that says ``there
+are exactly two things,'' and let $T_2$ be the Morita extension of
+$T_1$ by the addition of a product sort. We know that the obvious
+embedding $F:T_1\to T_2$ is one-half of an equivalence. However, there
+are clearly formulas $\phi$ in the language of $T_2$ that are not
+provably equivalent to formulas in the target of the translation
+$F$. For example, let $\psi$ be the sentence that says there are four
+things of the product sort. Nonetheless, there is an extended sense in
+which this formula $\psi$ is in the image of $F$. Indeed, if $\chi$ is
+the ``code'' for the product sort $\sigma '$, then for any
+$\Sigma _2$-formula $\psi (x)$ with $x$ of type $\sigma '$, there is a
+$\Sigma _1$ formula $\phi (y)$ such that
+\[ T_2\: \vdash \: \chi (x,y)\to (\psi (x)\leftrightarrow \phi (x))
+  .\] Notice that a code is really just another name for a t-map. I
+conjecture then that the correct formulation of ``essential
+surjectivity'' will necessarily involve t-maps.
+
+Let's now try to work at this in the other direction by looking at
+abstract $2$-categoric notions of ``eso'' and ``fully faithful''
+morphisms. See
+\url{https://ncatlab.org/nlab/show/fully+faithful+morphism}
+
+If $K$ is a 2-category, then for any objects $a,b$ of $K$, we let
+$K(a,b)$ denote the category whose objects are $1$-cells (i.e. arrows)
+from $a$ to $b$, and whose arrows are $2$-cells. Thus, in the
+particular case of $\mathsf{Th}$, if $T_1$ and $T_2$ are theories,
+then $\mathsf{Th}(T_1,T_2)$ is the category whose objects are
+translations, and whose arrows are t-maps.
+
+\begin{defn} In a $2$-category $\2K$, a $1$-cell $f:A\to B$ is said to
+  be \emph{fully faithful} just in case for all objects $X\in \2K$,
+  the induced functor $\2K (X,A)\to \2K (X,B)$ is full and
+  faithful. \end{defn}
+
+\begin{conj} Let $F:T_1\to T_2$ be a translation. Then $F$ is fully
+  faithful iff $F$ is conservative. \end{conj}
+
+\begin{proof} Let $X$ be an arbitrary theory, and consider the functor
+  $\2{Th}(X,T_1)\to \2{Th}(X,T_2)$ given on objects (translations) by
+  $G\mapsto F\circ G$ and on arrows (t-maps) by
+  $\chi\mapsto 1_F\ast \chi$. \end{proof}
+
 
 
 
