@@ -52,21 +52,22 @@ sense, to the former?
   surjective translations $F:T_1\to T_2$ and $G:T_2\to T_1$, then
   $T_1$ and $T_2$ are bi-interpretable. \end{defn}
 
-\section{Preliminaries}
-
 \newcommand{\2}{\mathsf}
 
-Let $\2{Th}$ be the $2$-category of coherent theories, where the
-1-cells are translations and the 2-cells are functional relations
-between translations (i.e.\ t-maps). If $F:T_1\to T_2$ is a strong
-translation, then $F$ is an equivalence iff $F$ is conservative and
-essentially surjective. We currently lack a similar decomposition
-theorem for weak translations, although we can exploit the equivalence
-between $\2{Th}$ and $\2{Coh}$ to make some progress on this issue. In
-particular, we know that a functor in $\2{Coh}$ is an equivalence iff
-it is full, faithful, and essentially surjective.
+\section{Factorization of translations}
 
-\begin{example} We show here that for a weak translations
+For strong translations, we have a factorization theorem: a
+translation $F$ is an equivalence iff $F$ is conservative and
+essentially surjective \citep[Props.\ 4.5.26, 4.5.27]{tlps}. That is a
+useful fact for reasoning about relations between theories: if $T_1$
+can be embedded into $T_2$ such that every $\Sigma _2$-formula is
+equivalent to a formula in the image, then $T_1$ and $T_2$ are
+equivalent. The point of this section is to explore whether there is a
+corresponding factorization for weak translations. The following
+example shows that $F$ conservative plus $F$ essentially surjective
+does not imply that $F$ is an equivalence.
+
+\begin{example} \label{nope} We show here that for a weak translations
   $F:T_1\to T_2$, conservative plus essentially surjective does not
   imply that $F$ is an equivalence. Let
   $\Sigma _1 = \{ \sigma _1,\sigma _2\}$, let
@@ -81,24 +82,19 @@ it is full, faithful, and essentially surjective.
     of $T_2$, the model $F^*(M)$ assigns the same set to $\sigma _1$
     and $\sigma _2$, hence $F^*$ is not essentially surjective.
   \end{itemize}
-  It is clear that the reason why $F$ is not an equivalence is because
-  the standard conservativity condition does not rule out the
-  identification of sorts that were originally not identified. In
-  particular, $T_1$ does not imply any relation between $\sigma _1$
-  and $\sigma _2$. Consider the $\Sigma _2$-formula
-  $\chi (x,y)\equiv (x=y)$, where $x$ and $y$ are variables of sort
-  $\sigma$. Then $\chi (x,y)$ is a functional relation of sort
-  $F(\sigma _1)\to F(\sigma _2)$ while there is no $\Sigma _1$-formula
-  that represents a functional relation of sort
-  $\sigma _1\to \sigma _2$.
-
-  The issue then seems to be that while $F$ is essentially surjective,
-  it does not resemble a full functor. Intuitively, a full functor
-  would have the feature that for any functional relation
-  $\chi :F(\sigma _1)\to F(\sigma _2)$, there is a functional relation
-  $\theta :\sigma _1\to \sigma _2$ such that $F(\theta )\simeq
-  \chi$. While there is a $\Sigma _1$-formula $\eta$ such that
-  $F(\eta )\simeq \chi$, this $\eta$ has the wrong arity.
+  The reason why $F$ is not an equivalence is because neither
+  conservativity nor essential surjectivity require that the domain
+  theory has a sufficient number of functional relations between
+  sorts. In this case, $T_2$ has a functional relation between sorts
+  $F(\sigma _1)$ and $F(\sigma _2)$ whereas $T_1$ does not have a
+  functional relation between $\sigma _1$ and $\sigma _2$.  The issue
+  then seems to be that $F$ does not resemble a full
+  functor. Intuitively, a full functor would have the feature that for
+  any functional relation $\chi :F(\sigma _1)\to F(\sigma _2)$, there
+  is a functional relation $\theta :\sigma _1\to \sigma _2$ such that
+  $F(\theta )\simeq \chi$. While there is indeed a $\Sigma _1$-formula
+  $\eta$ such that $F(\eta )\simeq \chi$, any such $\eta$ has the
+  wrong arity.
 
   In terms of the syntactic categories $C_{T_1}$ and $C_{T_2}$, we can
   see that the functor corresponding to $F$ is not full. In
@@ -140,23 +136,25 @@ an arrow from $F(\phi )$ to $F(\psi )$ in $C_{T_2}$. By the fullness
 of $F$, there is a corresponding arrow from $\phi$ to $\psi$ in
 $C_{T_1}$. Hence, $\phi\vdash\psi$ in $T_1$.
 
-The notion of being essentially surjective will also need to be
-generalized. For example, let $T_1$ be the theory that says ``there
-are exactly two things,'' and let $T_2$ be the Morita extension of
-$T_1$ by the addition of a product sort. We know that the obvious
-embedding $F:T_1\to T_2$ is one-half of an equivalence. However, there
-are clearly formulas $\phi$ in the language of $T_2$ that are not
-provably equivalent to formulas in the target of the translation
-$F$. For example, let $\psi$ be the sentence that says there are four
-things of the product sort. Nonetheless, there is an extended sense in
-which this formula $\psi$ is in the image of $F$. Indeed, if $\chi$ is
-the ``code'' for the product sort $\sigma '$, then for any
-$\Sigma _2$-formula $\psi (x)$ with $x$ of type $\sigma '$, there is a
-$\Sigma _1$ formula $\phi (y)$ such that
-\[ T_2\: \vdash \: \chi (x,y)\to (\psi (x)\leftrightarrow \phi (x))
-  .\] Notice that a code is really just another name for a t-map. I
-conjecture then that the correct formulation of ``essential
-surjectivity'' will necessarily involve t-maps.
+The next example shows that $F:T_1\to T_2$ being an equivalence does
+not imply that $F$ is essentially surjective.
+
+\begin{example} Let $T_1$ be the theory that says ``there are exactly
+  two things,'' and let $T_2$ be the Morita extension of $T_1$ by the
+  addition of a product sort. We know that the obvious embedding
+  $F:T_1\to T_2$ is one-half of an equivalence. However, there are
+  clearly formulas $\phi$ in the language of $T_2$ that are not
+  provably equivalent to formulas in the target of the translation
+  $F$. For example, let $\psi$ be the sentence that says there are
+  four things of the product sort. Nonetheless, there is an extended
+  sense in which this formula $\psi$ is in the image of $F$. Indeed,
+  if $\chi$ is the ``code'' for the product sort $\sigma '$, then for
+  any $\Sigma _2$-formula $\psi (x)$ with $x$ of type $\sigma '$,
+  there is a $\Sigma _1$ formula $\phi (y)$ such that
+  \[ T_2\: \vdash \: \chi (x,y)\to (\psi (x)\leftrightarrow \phi (x))
+    .\] Notice that a code is really just another name for a t-map. I
+  conjecture then that the correct formulation of ``essential
+  surjectivity'' will necessarily involve t-maps. \end{example}
 
 Let's now try to work at this in the other direction by looking at
 abstract $2$-categoric notions of ``eso'' and ``fully faithful''
