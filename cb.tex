@@ -15,9 +15,10 @@
 \newtheorem{lemma}[prop]{Lemma}
 \theoremstyle{definition}
 \newtheorem*{defn}{Definition}
+\newtheorem{example}[prop]{Example}
 \theoremstyle{remark}
 \newtheorem*{note}{Remark}
-\newtheorem*{example}{Example}
+
 \newcommand{\3}{\mathcal}
 \begin{document}
 
@@ -75,17 +76,52 @@ it is full, faithful, and essentially surjective.
   formula. Obviously $F:T_1\to T_2$ is a translation. We observe:
   \begin{itemize}
   \item $F$ is essentially surjective.
-  \item $F$ is conservative.
+  \item $F$ is conservative.  
   \item $F$ is not part of an equivalence. Indeed, for any model $M$
     of $T_2$, the model $F^*(M)$ assigns the same set to $\sigma _1$
     and $\sigma _2$, hence $F^*$ is not essentially surjective.
   \end{itemize}
+  It is clear that the reason why $F$ is not an equivalence is because
+  the standard conservativity condition does not rule out the
+  identification of sorts that were originally not identified. In
+  particular, $T_1$ does not imply any relation between $\sigma _1$
+  and $\sigma _2$. Consider the $\Sigma _2$-formula
+  $\chi (x,y)\equiv (x=y)$, where $x$ and $y$ are variables of sort
+  $\sigma$. Then $\chi (x,y)$ is a functional relation of sort
+  $F(\sigma _1)\to F(\sigma _2)$ while there is no $\Sigma _1$-formula
+  that represents a functional relation of sort
+  $\sigma _1\to \sigma _2$.
+
+  The issue then seems to be that while $F$ is essentially surjective,
+  it does not resemble a full functor. Intuitively, a full functor
+  would have the feature that for any functional relation
+  $\chi :F(\sigma _1)\to F(\sigma _2)$, there is a functional relation
+  $\theta :\sigma _1\to \sigma _2$ such that $F(\theta )\simeq
+  \chi$. While there is a $\Sigma _1$-formula $\eta$ such that
+  $F(\eta )\simeq \chi$, this $\eta$ has the wrong arity.
+
   In terms of the syntactic categories $C_{T_1}$ and $C_{T_2}$, we can
   see that the functor corresponding to $F$ is not full. In
   particular, if $x_i$ is a variable of sort $\sigma _i$, then there
   is an arrow from $[\top .Fx_1]$ to $[\top .Fx_2]$ in $C_{T_2}$, but
   no arrow from $[\top .x_1]$ to $[\top .x_2]$ in
   $C_{T_1}$.  \end{example}
+
+\begin{example} Let
+  $\Sigma _1 = \{ \sigma _1,\sigma _2,\chi _1,\chi _2\}$, where
+  $\chi _i:\sigma _1\to \sigma _2$. Let $T_1$ be the theory in
+  $\Sigma _1$ that says that $\chi _1$ and $\chi _2$ are functional
+  relationships. Let $\Sigma _2 =\{ \sigma _1',\sigma _2',\theta \}$,
+  and let $T_2$ be the theory in $\Sigma _2$ that says that $\theta$
+  is a functional relationship. Let $F:\Sigma _1\to \Sigma _2$ be the
+  reconstrual that takes both $\chi _1$ and $\chi _2$ to
+  $\theta$. Then $F:T_1\to T_2$ is a translation, and as in the
+  previous example, $F$ is essentially surjective. However, $F$ is not
+  conservative. Indeed, we have
+  $T_2\vdash F[\forall x\forall x(\chi _1\leftrightarrow \chi _2)]$
+  but
+  $T_1\not\vdash \forall x\forall y(\chi _1\leftrightarrow \chi _2)$.
+\end{example}
 
 Now here is my intuition: for a (weak) translation $F:T_1\to T_2$, the
 notion of being conservative still makes sense --- although it may not
@@ -99,7 +135,10 @@ $[\phi .X]$ and $[\psi .Y]$ of $C_{T_1}$, the map
 \[ \mathrm{hom}\left( [\phi .X] ,[\psi .Y]\right) \: \to \:
   \mathrm{hom}\left( [F\phi .X] ,[F\psi .Y]\right) ,\] is a
 bijection. The fullness condition implies that the translation is
-conservative, but the faithfulness condition says something more.
+conservative: if $F(\phi )\vdash F(\psi )$ in $T_2$, then $[X=X]$ is
+an arrow from $F(\phi )$ to $F(\psi )$ in $C_{T_2}$. By the fullness
+of $F$, there is a corresponding arrow from $\phi$ to $\psi$ in
+$C_{T_1}$. Hence, $\phi\vdash\psi$ in $T_1$.
 
 The notion of being essentially surjective will also need to be
 generalized. For example, let $T_1$ be the theory that says ``there
