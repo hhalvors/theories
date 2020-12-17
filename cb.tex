@@ -58,14 +58,21 @@ sense, to the former?
 
 For strong translations, we have a factorization theorem: a
 translation $F$ is an equivalence iff $F$ is conservative and
-essentially surjective \citep[Props.\ 4.5.26, 4.5.27]{tlps}. That is a
-useful fact for reasoning about relations between theories: if $T_1$
-can be embedded into $T_2$ such that every $\Sigma _2$-formula is
+essentially surjective \citep[Props.\ 4.5.26, 4.5.27]{tlps}. This fact
+is useful for reasoning about relations between theories: if $T_1$ can
+be embedded into $T_2$ such that every $\Sigma _2$-formula is
 equivalent to a formula in the image, then $T_1$ and $T_2$ are
-equivalent. The point of this section is to explore whether there is a
-corresponding factorization for weak translations. The following
-example shows that $F$ conservative plus $F$ essentially surjective
-does not imply that $F$ is an equivalence.
+equivalent. It suggests the validity of the following mode of
+reasoning about the relationship between theories:
+\begin{quote}
+  If $T_1$ can be interpreted into $T_2$ into such a way that (a) any
+  inference licensed by $T_2$ was already licensed by $T_1$, and (b)
+  any concept expressable by $T_2$ is already expressable by $T_1$,
+  then $T_1$ and $T_2$ are equivalent. \end{quote} The purpose of this
+section is to explore whether this kind of reasoning continues to hold
+for generalized translations. The following example shows that it will
+have to be modified in some way: $F$ being conservative and
+essentially surjective does not imply that $F$ is an equivalence.
 
 \begin{example} \label{nope} We show here that for a weak translations
   $F:T_1\to T_2$, conservative plus essentially surjective does not
@@ -146,11 +153,13 @@ not imply that $F$ is essentially surjective.
   clearly formulas $\phi$ in the language of $T_2$ that are not
   provably equivalent to formulas in the target of the translation
   $F$. For example, let $\psi$ be the sentence that says there are
-  four things of the product sort. Nonetheless, there is an extended
-  sense in which this formula $\psi$ is in the image of $F$. Indeed,
-  if $\chi$ is the ``code'' for the product sort $\sigma '$, then for
-  any $\Sigma _2$-formula $\psi (x)$ with $x$ of type $\sigma '$,
-  there is a $\Sigma _1$ formula $\phi (y)$ such that
+  four things of the product sort.
+
+  Nonetheless, there is an extended sense in which this formula $\psi$
+  is in the image of $F$. Indeed, if $\chi$ is the ``code'' for the
+  product sort $\sigma '$, then for any $\Sigma _2$-formula $\psi (x)$
+  with $x$ of type $\sigma '$, there is a $\Sigma _1$ formula
+  $\phi (y)$ such that
   \[ T_2\: \vdash \: \chi (x,y)\to (\psi (x)\leftrightarrow \phi (x))
     .\] Notice that a code is really just another name for a t-map. I
   conjecture then that the correct formulation of ``essential
