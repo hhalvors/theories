@@ -99,8 +99,11 @@ with: the $2$-category $\2{Th}$ of theories, and the $2$-category
 $\2{Mod}$ of categories of models of theories. The interesting
 properties of morphisms will be different in the two cases, but of
 course, also related to each other, since there is a $2$-functor
-$M:\2{Th}\to\2{Mod}$ that takes a theory $T$ to its category $M(T)$ of
-models.
+$M:\2{Th}\to\2{Cat}$ that takes a theory $T$ to its category $M(T)$ of
+models, a translation $F:T_1\to T_2$ to the dual functor
+$M(F):M(T_2)\to M(T_1)$, and a t-map $\chi : F\Rightarrow G$ to a
+natural transformation $M(\chi ):M(F)\Rightarrow M(G)$.
+
 
 The following example shows that in the $2$-category of theories, a
 translation's being conservative and essentially surjective does not
@@ -220,8 +223,10 @@ translations, and whose arrows are t-maps.
 NOTE: I now think this conjecture is false. I think that $F$ being
 fully faithful is stronger than $F$ being conservative.
 
-
-
+\bigskip TO DO: relate features of arrows in $\2{Th}$ to the Baez
+classification of ``forgetting''
+\citep{forget,weatherall2016,barrett2020}. Pay attention to the
+ambiguity between syntactic and semantic arrows.
 
 \section{Examples of theory pairs that are not CB}
 
