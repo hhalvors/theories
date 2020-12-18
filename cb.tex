@@ -99,8 +99,7 @@ theories, the interesting question is not whether $f$ is an
 isomorphism iff $f$ is a monomorphism and epimorphism, but whether $f$
 is an equivalencee iff $f$ is [some other kind of thing]. See
 \url{https://ncatlab.org/nlab/show/%28eso%2C+fully+faithful%29+factorization+system}
-  for more on factorization of morphisms in $2$-categories.
-                                
+  for more on factorization of morphisms in $2$-categories.                                
 
 In short: if relations between theories are to be explicated in terms
 of properties of translations, then these explications should make use
@@ -117,9 +116,22 @@ models, a translation $F:T_1\to T_2$ to the dual functor
 $M(F):M(T_2)\to M(T_1)$, and a t-map $\chi : F\Rightarrow G$ to a
 natural transformation $M(\chi ):M(F)\Rightarrow M(G)$.
 
-The following example shows that in the $2$-category of theories, a
-translation's being conservative and essentially surjective does not
-imply that it is an equivalence.
+Recall that $F:T_1\to T_2$ is \emph{conservative} just in case if
+$T_2\vdash F\phi$ then $T_1\vdash \phi$, for any $\Sigma _1$-sentence
+$\phi$.  The following example shows that in the $2$-category of
+theories, a translation's being conservative and essentially
+surjective does not imply that it is an equivalence.
+
+The following conjecture is for coherent logic (i.e.\ without negation
+symbol). It is obviously false for Boolean logic.
+
+\begin{conj} Let $T$ be the empty theory on the empty (single sorted)
+  signature $\Sigma$. If $\phi$ and $\psi$ are $\Sigma$-sentences such
+  that $T\vdash\phi\vee\psi$, then either $T\vdash\phi$ or
+  $T\vdash\psi$. \end{conj}
+
+NOTE: I am not yet sure that the translation in the following example
+is conservative. 
 
 \begin{example} \label{nope} We show here that for a weak translations
   $F:T_1\to T_2$, conservative plus essentially surjective does not
@@ -131,7 +143,14 @@ imply that it is an equivalence.
   formula. Obviously $F:T_1\to T_2$ is a translation. We observe:
   \begin{itemize}
   \item $F$ is essentially surjective.
-  \item $F$ is conservative.  
+  \item $F$ is conservative. To see this, note first that if $\phi$ is
+    a $\Sigma _1$-formula such that $T_2\vdash F\phi $, then
+    $T_1\vdash \phi$. For the general case, each $\Sigma _1$-formula
+    is equivalent either to $\phi _1\wedge \phi _2$ or to
+    $\phi _1\vee \phi _2$, where $\phi _i$ contains only variables of
+    sort $\sigma _i$. [To this point I am fairly sure. But to complete
+    the argument, I need the conjecture from above.]
+ 
   \item $F$ is not part of an equivalence. Indeed, for any model $M$
     of $T_2$, the model $F^*(M)$ assigns the same set to $\sigma _1$
     and $\sigma _2$, hence $F^*$ is not essentially surjective.
@@ -156,6 +175,16 @@ imply that it is an equivalence.
   is an arrow from $[\top .Fx_1]$ to $[\top .Fx_2]$ in $C_{T_2}$, but
   no arrow from $[\top .x_1]$ to $[\top .x_2]$ in
   $C_{T_1}$.  \end{example}
+
+\begin{defn} Let $T$ be a coherent theory in signature $\Sigma$. We
+  say that $T$ is a \emph{Boolean theory} just in case for each
+  $\Sigma$-formula $\phi$, there is a $\Sigma$-formula $\psi$ such
+  that $\phi \wedge \psi \vdash \bot$ and $\top \vdash \phi\vee
+  \psi$. \end{defn}
+
+\begin{conj} Let $T_1$ and $T_2$ be Boolean theories. If
+  $F:T_1\to T_2$ is a conservative translation, then the corresponding
+  functor $C_F:C_{T_1}\to C_{T_2}$ is fully faithful. \end{conj}
 
 \begin{example} Let
   $\Sigma _1 = \{ \sigma _1,\sigma _2,\chi _1,\chi _2\}$, where
