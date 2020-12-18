@@ -78,35 +78,44 @@ between theories.'' In particular, with the generalized notion of
 translations, first-order theories form not just a category but a
 $2$-category. In a category $C$, the interesting properties of
 morphisms include: iso, monic, epi, regular monic, split monic,
-etc. Hence, if philosophers of science had only $1$-categorical
-concepts at their disposal, then they might try to explicate the
-notion of ``equivalence'' in terms of isomorphism, or the notion of
-``reduction'' in terms of monomorphism, etc.
+etc. Furthermore, the interesting technical questions include: if a
+morphism $f:a\to b$ is both epi and monic, then is it is?  Hence, if
+theories formed only a $1$-category, then we might try to cache out
+notions like ``equivalence'' and ``reduction'' in terms of notions
+like ``isomorphism'' and ``monomorphism.''
 
-In a $2$-category $D$, the properties of morphisms need to be
-generalized and sophisticated. Think, for example, of a paradigm case
-of a $2$-category, viz.\ the category $\2{Cat}$ of all (small)
-categories. Here the interesting features of morphisms (functors) are
-not iso, monic, epi, etc., but full, faithful, essentially surjective,
-etc. (For a general $2$-category $D$, the corresponding properties of
-morphisms have slightly more complicated definitions.)  Similarly, the
+But theories form a $2$-category, and so different features of
+morphisms become relevant. Think, for example, of the paradigm case of
+a $2$-category, viz.\ the category $\2{Cat}$ of all (small)
+categories. Here the interesting properties of morphisms (functors)
+are not ``is a monomorphism'' and ``is an epimorphism'' etc., but ``is
+full'' and ``is faithful'' and ``is essentially surjective'' etc. (For
+a general $2$-category $D$, the corresponding properties of morphisms
+have slightly more complicated definitions.)  Similarly, the
 interesting notion of ``sameness of objects'' in $\2{Cat}$ is not
 isomorphism, but equivalence of categories --- which can be thought of
-as ``isomorphism up to isomorphism.'' Hence, if relations between
-theories are to be explicated in terms of properties of morphisms
-between theories, these explications should make use of
-$2$-categorical concepts.
+as ``isomorphism up to isomorphism.'' Finally, for the $2$-category of
+theories, the interesting question is not whether $f$ is an
+isomorphism iff $f$ is a monomorphism and epimorphism, but whether $f$
+is an equivalencee iff $f$ is [some other kind of thing]. See
+\url{https://ncatlab.org/nlab/show/%28eso%2C+fully+faithful%29+factorization+system}
+  for more on factorization of morphisms in $2$-categories.
+                                
 
-Note also that we actually have two distinct $2$-categories to work
-with: the $2$-category $\2{Th}$ of theories, and the $2$-category
-$\2{Mod}$ of categories of models of theories. The interesting
-properties of morphisms will be different in the two cases, but of
-course, also related to each other, since there is a $2$-functor
+In short: if relations between theories are to be explicated in terms
+of properties of translations, then these explications should make use
+of $2$-categorical concepts.
+
+Note that there are actually two distinct $2$-categories at play here:
+the ``syntactic'' $2$-category $\2{Th}$ of theories and translations,
+and the ``semantic'' $2$-category $\2{Mod}$ of categories of models of
+theories. The interesting properties of morphisms will be different in
+the two cases, but of course, also related to --- in fact, dual to ---
+each other, since there is a contravariant $2$-functor
 $M:\2{Th}\to\2{Cat}$ that takes a theory $T$ to its category $M(T)$ of
 models, a translation $F:T_1\to T_2$ to the dual functor
 $M(F):M(T_2)\to M(T_1)$, and a t-map $\chi : F\Rightarrow G$ to a
 natural transformation $M(\chi ):M(F)\Rightarrow M(G)$.
-
 
 The following example shows that in the $2$-category of theories, a
 translation's being conservative and essentially surjective does not
