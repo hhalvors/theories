@@ -56,23 +56,46 @@ sense, to the former?
 
 \section{Factorization of translations}
 
-For strong translations, we have a factorization theorem: a
-translation $F$ is an equivalence iff $F$ is conservative and
-essentially surjective \citep[Props.\ 4.5.26, 4.5.27]{tlps}. This fact
-is useful for reasoning about relations between theories: if $T_1$ can
-be embedded into $T_2$ such that every $\Sigma _2$-formula is
-equivalent to a formula in the image, then $T_1$ and $T_2$ are
-equivalent. It suggests the validity of the following mode of
-reasoning about the relationship between theories:
+For strong translations, we have the following factorization theorem:
+\begin{quote} A translation $F$ is an equivalence iff $F$ is
+  conservative and essentially surjective \citep[Props.\ 4.5.26,
+  4.5.27]{tlps}. \end{quote} This fact is useful for reasoning about
+relations between theories: if $T_1$ can be embedded into $T_2$ such
+that every $\Sigma _2$-formula is equivalent to a formula in the
+image, then $T_1$ and $T_2$ are equivalent. It suggests the validity
+of the following mode of reasoning about the relationship between
+theories:
 \begin{quote}
   If $T_1$ can be interpreted into $T_2$ into such a way that (a) any
   inference licensed by $T_2$ was already licensed by $T_1$, and (b)
   any concept expressable by $T_2$ is already expressable by $T_1$,
   then $T_1$ and $T_2$ are equivalent. \end{quote} The purpose of this
-section is to explore whether this kind of reasoning continues to hold
-for generalized translations. The following example shows that it will
-have to be modified in some way: $F$ being conservative and
-essentially surjective does not imply that $F$ is an equivalence.
+section is to investigate the extent to which this kind of reasoning
+works for translations in general (and not just strong
+translations). In fact, there is a wide-open field of investigation
+here, which should hold much interest for talk about ``relations
+between theories.'' In particular, with the generalized notion of
+translations, first-order theories form not just a category but a
+$2$-category. In a category $C$, the interesting properties of
+morphisms include: iso, monic, epi, regular monic, split monic,
+etc. Hence, if philosophers of science had only $1$-categorical
+concepts at their disposal, then they might try to explicate the
+notion of ``equivalence'' in terms of isomorphism, or the notion of
+``reduction'' in terms of monomorphism, etc.
+
+In a $2$-category $D$, the properties of morphisms need to be
+generalized and sophisticated. Think, for example, of a paradigm case
+of a $2$-category, viz.\ the category of all (small) categories. Here
+the interesting features of morphisms (functors) are not iso, monic,
+epi, etc., but full, faithful, essentially surjective, etc. (For a
+general $2$-category $D$, the corresponding properties of morphisms
+have slightly more complicated definitions.)  Hence, if relations
+between theories are to be explicated in terms of properties of
+morphisms, these explications should involve $2$-categorical concepts.
+
+The following example shows that in the $2$-category of theories, a
+translation's being conservative and essentially surjective does not
+imply that it is an equivalence.
 
 \begin{example} \label{nope} We show here that for a weak translations
   $F:T_1\to T_2$, conservative plus essentially surjective does not
