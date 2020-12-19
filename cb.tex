@@ -122,38 +122,44 @@ $\phi$.  The following example shows that in the $2$-category of
 theories, a translation's being conservative and essentially
 surjective does not imply that it is an equivalence.
 
-The following conjecture is for coherent logic (i.e.\ without negation
-symbol). It is obviously false for Boolean logic.
-
-\begin{conj} Let $T$ be the empty theory on the empty (single sorted)
-  signature $\Sigma$. If $\phi$ and $\psi$ are $\Sigma$-sentences such
-  that $T\vdash\phi\vee\psi$, then either $T\vdash\phi$ or
-  $T\vdash\psi$. \end{conj}
-
-NOTE: I am not yet sure that the translation in the following example
-is conservative. 
-
-\begin{example} \label{nope} We show here that for a weak translations
+\begin{example} \label{nope} We show here that for a weak translation
   $F:T_1\to T_2$, conservative plus essentially surjective does not
-  imply that $F$ is an equivalence. Let
-  $\Sigma _1 = \{ \sigma _1,\sigma _2\}$, let
-  $\Sigma _2= \{ \sigma \}$, and let $T_i$ be the empty theory in
-  $\Sigma _i$. Define a reconstrual $F$ from $\Sigma _1$ to
-  $\Sigma _2$ by setting $F(\sigma _i)=\sigma$, with trivial domain
-  formula. Obviously $F:T_1\to T_2$ is a translation. We observe:
+  imply that $F$ is an equivalence. Let $T$ be an arbitrary complete
+  theory in a signature $\Sigma$ with single sort $\sigma$.  Let
+  $T\amalg T$ be the two-sorted coproduct of $T$ in signature
+  $\Sigma\amalg \Sigma$. (The axioms of $T\amalg T$ consist of two
+  copies of the axioms of $T$.)  For convenience, we will subscript
+  elements of the first copy of $\Sigma$ with $1$ and elements of the
+  second copy of $\Sigma$ with $2$.  Note that every
+  $\Sigma\amalg\Sigma$ formula is provably equivalent to a conjunction
+  or disjunction of formulas $\phi _1,\phi _2$, where $\phi _i$
+  contains only variables of sort $\sigma _i$. What's more, if
+  $T\amalg T\vdash \phi _1\vee \phi _2$ then either
+  $T\amalg T\vdash\phi _1$ or $T\amalg T\vdash \phi _2$. This can be
+  seen by noting the fact that any pair of models of $T$ canonically
+  defines a model of $T\amalg T$.
+
+  Now define a reconstrual $F$ from $\Sigma\amalg \Sigma$ to $\Sigma$
+  by setting $F(\sigma _i)=\sigma$, with trivial domain formula. We
+  observe:
   \begin{itemize}
+  \item $F$ is a translation from $T\amalg T$ to $T$. In the case of a
+    formula $\phi$ that contains only variables of sort $\sigma _1$
+    (or only of sort $\sigma _2$), it is obvious that if
+    $T\amalg T\vdash\phi$ then $T\vdash F\phi$. For the more general
+    case, any $\Sigma\amalg \Sigma$-formula $\phi$ is provably
+    equivalent either to $\phi _1\vee \phi _2$ or to
+    $\phi _1\wedge\psi _2$, where $\phi _i$ contains only variables of
+    sort $\sigma _i$. In the latter case, if
+    $T_1\vdash \phi _1\vee \phi _2$, then either
+    $T\amalg T\vdash \phi _1$ or $T\amalg T\vdash \phi _2$, and hence
+    either $T\vdash F\phi _1$ or $T\vdash F\phi _2$.
   \item $F$ is essentially surjective.
-  \item $F$ is conservative. To see this, note first that if $\phi$ is
-    a $\Sigma _1$-formula such that $T_2\vdash F\phi $, then
-    $T_1\vdash \phi$. For the general case, each $\Sigma _1$-formula
-    is equivalent either to $\phi _1\wedge \phi _2$ or to
-    $\phi _1\vee \phi _2$, where $\phi _i$ contains only variables of
-    sort $\sigma _i$. [To this point I am fairly sure. But to complete
-    the argument, I need the conjecture from above.]
- 
+  \item $F$ is conservative. This follows immediately from the fact
+    that $T\amalg T$ is complete.
   \item $F$ is not part of an equivalence. Indeed, for any model $M$
-    of $T_2$, the model $F^*(M)$ assigns the same set to $\sigma _1$
-    and $\sigma _2$, hence $F^*$ is not essentially surjective.
+    of $T$, the model $F^*(M)$ assigns the same set to $\sigma _1$ and
+    $\sigma _2$, hence $F^*$ is not essentially surjective.
   \end{itemize}
   The reason why $F$ is not an equivalence is because neither
   conservativity nor essential surjectivity require that the domain
@@ -176,15 +182,12 @@ is conservative.
   no arrow from $[\top .x_1]$ to $[\top .x_2]$ in
   $C_{T_1}$.  \end{example}
 
-\begin{defn} Let $T$ be a coherent theory in signature $\Sigma$. We
-  say that $T$ is a \emph{Boolean theory} just in case for each
-  $\Sigma$-formula $\phi$, there is a $\Sigma$-formula $\psi$ such
-  that $\phi \wedge \psi \vdash \bot$ and $\top \vdash \phi\vee
-  \psi$. \end{defn}
-
-\begin{conj} Let $T_1$ and $T_2$ be Boolean theories. If
-  $F:T_1\to T_2$ is a conservative translation, then the corresponding
-  functor $C_F:C_{T_1}\to C_{T_2}$ is fully faithful. \end{conj}
+\begin{note} Here's a little puzzle: $T_1=T\amalg T$ is Morita
+  equivalent to a single-sorted theory $T_1'$.  Since $T_1$ is proper
+  (or may be assumed so), there is a translation $G:T_1'\to T_1$ that
+  is one-half of an equivalence. Why is the composite $F\circ G$ not
+  an equivalence? Isn't it a strong translation that is conservative
+  and essentially surjective? \end{note}
 
 \begin{example} Let
   $\Sigma _1 = \{ \sigma _1,\sigma _2,\chi _1,\chi _2\}$, where
