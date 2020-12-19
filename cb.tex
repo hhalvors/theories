@@ -18,6 +18,7 @@
 \newtheorem{example}[prop]{Example}
 \theoremstyle{remark}
 \newtheorem*{note}{Remark}
+\newtheorem*{question}{Question}
 
 \newcommand{\3}{\mathcal}
 \begin{document}
@@ -116,78 +117,98 @@ models, a translation $F:T_1\to T_2$ to the dual functor
 $M(F):M(T_2)\to M(T_1)$, and a t-map $\chi : F\Rightarrow G$ to a
 natural transformation $M(\chi ):M(F)\Rightarrow M(G)$.
 
-Recall that $F:T_1\to T_2$ is \emph{conservative} just in case if
-$T_2\vdash F\phi$ then $T_1\vdash \phi$, for any $\Sigma _1$-sentence
-$\phi$.  The following example shows that in the $2$-category of
-theories, a translation's being conservative and essentially
-surjective does not imply that it is an equivalence.
+\begin{defn} Let $F:T_1\to T_2$ be a translation. We say that
+  $F:T_1\to T_2$ is \emph{conservative} just in case if
+  $T_2\vdash F\phi$ then $T_1\vdash \phi$, for any
+  $\Sigma _1$-sentence $\phi$. \end{defn}
 
-\begin{example} \label{nope} We show here that for a weak translation
-  $F:T_1\to T_2$, conservative plus essentially surjective does not
-  imply that $F$ is an equivalence. Let $T$ be an arbitrary complete
-  theory in a signature $\Sigma$ with single sort $\sigma$.  Let
-  $T\amalg T$ be the two-sorted coproduct of $T$ in signature
-  $\Sigma\amalg \Sigma$. (The axioms of $T\amalg T$ consist of two
-  copies of the axioms of $T$.)  For convenience, we will subscript
-  elements of the first copy of $\Sigma$ with $1$ and elements of the
-  second copy of $\Sigma$ with $2$.  Note that every
-  $\Sigma\amalg\Sigma$ formula is provably equivalent to a conjunction
-  or disjunction of formulas $\phi _1,\phi _2$, where $\phi _i$
-  contains only variables of sort $\sigma _i$. What's more, if
-  $T\amalg T\vdash \phi _1\vee \phi _2$ then either
-  $T\amalg T\vdash\phi _1$ or $T\amalg T\vdash \phi _2$. This can be
-  seen by noting the fact that any pair of models of $T$ canonically
-  defines a model of $T\amalg T$.
+\begin{question} Is the above a good definition for coherent theories?
+  Recall that the implications of a coherent theory cannot be captured
+  by sentences, but need (open) sequents. So should the definition of
+  ``conservative'' involve sequents?
 
-  Now define a reconstrual $F$ from $\Sigma\amalg \Sigma$ to $\Sigma$
-  by setting $F(\sigma _i)=\sigma$, with trivial domain formula. We
-  observe:
+  In terms of syntactic categories: the above definition only involves
+  subobjects of $1$. However, the notion of conservativity should
+  involve all subobject lattices. \end{question}
+
+The following example shows that in the $2$-category of theories, a
+translation's being conservative and essentially surjective does not
+imply that it is an equivalence.
+
+\begin{example} \label{nope} We describe a translation
+  $F:(T\cup T')\to T$ that is conservative and essentially surjective,
+  but not an equivalence. Let $\Sigma$ be a signature with a single
+  sort $\sigma$, and let $T$ be an arbitrary complete theory in
+  $\Sigma$. (For example, we could take $T$ to be the theory that says
+  that there are infinitely many things. Or we could take $T$ to be
+  the theory that says that there are exactly two things.)  Let $T'$
+  be a primed copy of $T$, and let $T\cup T'$ be the coproduct of $T$
+  and $T'$. That is, the signature of $T\cup T'$ is the disjoint union
+  $\Sigma \cup \Sigma '$, and the axioms of $T\cup T'$ consist of the
+  original axioms of $T$ along with a primed copy of those
+  axioms. Note that any $\Sigma\cup\Sigma '$-formula is provably
+  equivalent to either a conjunction or a disjunction of two formulas
+  $\phi ,\phi '$, the first a $\Sigma$-formula and the second a
+  $\Sigma '$-formula. What's more, if
+  $(T\cup T')\vdash \phi \vee \phi '$ then either
+  $(T\cup T')\vdash\phi$ or $(T\cup T')\vdash \phi '$, since any pair
+  of models of $T$ canonically defines a model of $T\cup T'$.
+
+  Now define an equality-preserving reconstrual $F$ from
+  $\Sigma\cup \Sigma '$ to $\Sigma$ by removing the primes from
+  symbols in $\Sigma '$. We observe:
   \begin{itemize}
-  \item $F$ is a translation from $T\amalg T$ to $T$. In the case of a
-    formula $\phi$ that contains only variables of sort $\sigma _1$
-    (or only of sort $\sigma _2$), it is obvious that if
-    $T\amalg T\vdash\phi$ then $T\vdash F\phi$. For the more general
-    case, any $\Sigma\amalg \Sigma$-formula $\phi$ is provably
-    equivalent either to $\phi _1\vee \phi _2$ or to
-    $\phi _1\wedge\psi _2$, where $\phi _i$ contains only variables of
-    sort $\sigma _i$. In the latter case, if
-    $T_1\vdash \phi _1\vee \phi _2$, then either
-    $T\amalg T\vdash \phi _1$ or $T\amalg T\vdash \phi _2$, and hence
-    either $T\vdash F\phi _1$ or $T\vdash F\phi _2$.
+  \item $F$ is a translation from $T\cup T'$ to $T$. In the case of a
+    $\Sigma$-formula $\phi$, it is obvious that if
+    $T\cup T'\vdash\phi$ then $T\vdash\phi$. For the more general
+    case, any $\Sigma\cup \Sigma '$-formula $\psi$ is provably
+    equivalent either to $\phi \vee \phi '$ or to $\phi \wedge\phi '$,
+    where $\phi$ is a $\Sigma$-formula and $\phi '$ is a
+    $\Sigma '$-formula. In the former case, if
+    $T\cup T'\vdash \phi \vee \phi '$, then either
+    $T\cup T'\vdash \phi$ or $T\cup T'\vdash \phi '$, and hence either
+    $T\vdash F\phi$ or $T\vdash F\phi '$.
   \item $F$ is essentially surjective.
   \item $F$ is conservative. This follows immediately from the fact
-    that $T\amalg T$ is complete.
-  \item $F$ is not part of an equivalence. Indeed, for any model $M$
-    of $T$, the model $F^*(M)$ assigns the same set to $\sigma _1$ and
-    $\sigma _2$, hence $F^*$ is not essentially surjective.
+    that $T\cup T'$ is complete.
+  \item $F$ is not part of an equivalence. If $F$ had a
+    $1$-dimensional inverse $G:T\to (T\cup T')$, then $GF$ would map
+    both sorts $\sigma$ and $\sigma '$ to the same sort. Suppose for
+    simplicity that $GF(\sigma )=GF(\sigma ')=\sigma$. If there were a
+    t-map $\chi :GF\Rightarrow 1$, then $\chi _{\sigma '}$ would be a
+    definable bijection of arity $\sigma\to\sigma '$, in contradiction
+    with the fact that $\Sigma \cup \Sigma '$ has no such functional
+    relations. 
   \end{itemize}
   The reason why $F$ is not an equivalence is because neither
   conservativity nor essential surjectivity require that the domain
   theory has a sufficient number of functional relations between
-  sorts. In this case, $T_2$ has a functional relation between sorts
-  $F(\sigma _1)$ and $F(\sigma _2)$ whereas $T_1$ does not have a
-  functional relation between $\sigma _1$ and $\sigma _2$.  The issue
-  then seems to be that $F$ does not resemble a full
-  functor. Intuitively, a full functor would have the feature that for
-  any functional relation $\chi :F(\sigma _1)\to F(\sigma _2)$, there
-  is a functional relation $\theta :\sigma _1\to \sigma _2$ such that
-  $F(\theta )\simeq \chi$. While there is indeed a $\Sigma _1$-formula
-  $\eta$ such that $F(\eta )\simeq \chi$, any such $\eta$ has the
-  wrong arity.
+  sorts. In this case, $T$ describes a functional relation (namely the
+  identity) between sorts $F(\sigma )$ and $F(\sigma )$, whereas
+  $T\cup T'$ does not describe a functional relation between $\sigma$
+  and $\sigma '$.  The issue then seems to be that $F$ does not
+  resemble a full functor. Intuitively, a full functor would have the
+  feature that for any functional relation
+  $\chi :F(\sigma )\to F(\sigma ')$, there is a functional relation
+  $\theta :\sigma \to \sigma '$ such that $F(\theta )\simeq
+  \chi$. While there is indeed a $\Sigma\cup \Sigma '$-formula $\eta$
+  such that $F(\eta )$ is provably equivalent to
+  $\chi (x,y)\equiv (x=_\sigma y)$, any such $\eta$ has the wrong
+  arity.
 
-  In terms of the syntactic categories $C_{T_1}$ and $C_{T_2}$, we can
-  see that the functor corresponding to $F$ is not full. In
-  particular, if $x_i$ is a variable of sort $\sigma _i$, then there
-  is an arrow from $[\top .Fx_1]$ to $[\top .Fx_2]$ in $C_{T_2}$, but
-  no arrow from $[\top .x_1]$ to $[\top .x_2]$ in
-  $C_{T_1}$.  \end{example}
+  In terms of the syntactic categories $C_{T\cup T'}$ and $C_{T}$,
+  we can see that the functor corresponding to $F$ is not full. In
+  particular, if $x$ is a variable of sort $\sigma$ and $x'$ is a
+  variable of sort $\sigma '$, then there is an arrow from
+  $[\top .Fx]$ to $[\top .Fx']$ in $C_{T}$, but no arrow from
+  $[\top .x]$ to $[\top .x']$ in $C_{T\cup T'}$.  \end{example}
 
-\begin{note} Here's a little puzzle: $T_1=T\amalg T$ is Morita
-  equivalent to a single-sorted theory $T_1'$.  Since $T_1$ is proper
-  (or may be assumed so), there is a translation $G:T_1'\to T_1$ that
-  is one-half of an equivalence. Why is the composite $F\circ G$ not
-  an equivalence? Isn't it a strong translation that is conservative
-  and essentially surjective? \end{note}
+\begin{note} Here's a little puzzle: $T\cup T'$ is Morita equivalent
+  to a single-sorted theory $T_1$.  Since $T\cup T'$ is proper (or may
+  be assumed so), there is a translation $G:T_1\to T\cup T'$ that is
+  one-half of an equivalence. Why is the composite $F\circ G$ not an
+  equivalence? Isn't it a strong translation that is conservative and
+  essentially surjective? \end{note}
 
 \begin{example} Let
   $\Sigma _1 = \{ \sigma _1,\sigma _2,\chi _1,\chi _2\}$, where
