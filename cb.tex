@@ -138,21 +138,21 @@ imply that it is an equivalence.
 \begin{example} \label{nope} We describe a translation
   $F:(T\cup T')\to T$ that is conservative and essentially surjective,
   but not an equivalence. Let $\Sigma$ be a signature with a single
-  sort $\sigma$, and let $T$ be an arbitrary complete theory in
-  $\Sigma$. (For example, we could take $T$ to be the theory that says
-  that there are infinitely many things. Or we could take $T$ to be
-  the theory that says that there are exactly two things.)  Let $T'$
-  be a primed copy of $T$, and let $T\cup T'$ be the coproduct of $T$
-  and $T'$. That is, the signature of $T\cup T'$ is the disjoint union
-  $\Sigma \cup \Sigma '$, and the axioms of $T\cup T'$ consist of the
-  original axioms of $T$ along with a primed copy of those
-  axioms. Note that any $\Sigma\cup\Sigma '$-formula is provably
-  equivalent to either a conjunction or a disjunction of two formulas
-  $\phi ,\phi '$, the first a $\Sigma$-formula and the second a
-  $\Sigma '$-formula. What's more, if
-  $(T\cup T')\vdash \phi \vee \phi '$ then either
-  $(T\cup T')\vdash\phi$ or $(T\cup T')\vdash \phi '$, since any pair
-  of models of $T$ canonically defines a model of $T\cup T'$.
+  sort $\sigma$, and let $T$ be a complete theory in $\Sigma$ that has
+  models of cardinality greater than $1$. (For example, we could take
+  $T$ to be the theory that says that there are infinitely many
+  things. Or we could take $T$ to be the theory that says that there
+  are exactly two things.)  Let $T'$ be a primed copy of $T$, and let
+  $T\cup T'$ be the coproduct of $T$ and $T'$. That is, the signature
+  of $T\cup T'$ is the disjoint union $\Sigma \cup \Sigma '$, and the
+  axioms of $T\cup T'$ consist of the original axioms of $T$ along
+  with a primed copy of those axioms. Note that any
+  $\Sigma\cup\Sigma '$-formula is provably equivalent to either a
+  conjunction or a disjunction of two formulas $\phi ,\phi '$, the
+  first a $\Sigma$-formula and the second a $\Sigma '$-formula. What's
+  more, if $T\cup T'\vdash \phi \vee \phi '$ then either
+  $T\cup T'\vdash\phi$ or $T\cup T'\vdash \phi '$, since any pair of
+  models of $T$ canonically defines a model of $T\cup T'$.
 
   Now define an equality-preserving reconstrual $F$ from
   $\Sigma\cup \Sigma '$ to $\Sigma$ by removing the primes from
@@ -171,31 +171,30 @@ imply that it is an equivalence.
   \item $F$ is essentially surjective.
   \item $F$ is conservative. This follows immediately from the fact
     that $T\cup T'$ is complete.
-  \item $F$ is not part of an equivalence. If $F$ had a
-    $1$-dimensional inverse $G:T\to (T\cup T')$, then $GF$ would map
-    both sorts $\sigma$ and $\sigma '$ to the same sort. Suppose for
-    simplicity that $GF(\sigma )=GF(\sigma ')=\sigma$. If there were a
-    t-map $\chi :GF\Rightarrow 1$, then $\chi _{\sigma '}$ would be a
-    definable bijection of arity $\sigma\to\sigma '$, in contradiction
-    with the fact that $\Sigma \cup \Sigma '$ has no such functional
-    relations. (TO BE COMPLETED. I have the strange feeling that $F$
-    could be an equivalence if $T$ has only infinite models, and if
-    $G$ is $2$-dimensional with $G(\sigma )=\sigma ,\sigma '$. For
-    example, what if $T$ is the theory that says that there are
-    infinitely many things? In that case, aren't two copies of $T$
-    equivalent to one copy? But surely if $T$ is the theory that says
-    ``there are exactly two things'', then $GF$ would not be homotopy
-    equivalent to the identity.)
+  \item $F$ is not part of an equivalence. Suppose contrary to fact
+    that $F$ has an inverse $G:T\to (T\cup T')$. In this case, $GF$
+    maps both sorts $\sigma$ and $\sigma '$ to the same sequence
+    $\sigma _1,\dots ,\sigma _n$ of sorts. (Here each $\sigma _i$ is
+    either $\sigma$ or $\sigma '$.)  Furthermore, there is a t-map
+    $\chi :GF\to 1$, and hence two functional relations
+    $\chi _\sigma :\sigma _1\times\cdots\times \sigma _n\to \sigma$
+    and
+    $\chi _{\sigma '}:\sigma _1\times \cdots \times \sigma _n\to
+    \sigma '$.  In fact, $T\cup T'$ implies that both $\chi _\sigma$
+    and $\chi _{\sigma '}$ are bijections, which means that $T\cup T'$
+    defines a bijection from $\sigma$ to $\sigma '$, in contradiction
+    with the fact that $\Sigma\cup\Sigma '$-formulas split.
   \end{itemize}
   The reason why $F$ is not an equivalence is because neither
   conservativity nor essential surjectivity require that the domain
   theory has a sufficient number of functional relations between
-  sorts. In this case, $T$ describes a functional relation (namely the
-  identity) between sorts $F(\sigma )$ and $F(\sigma )$, whereas
-  $T\cup T'$ does not describe a functional relation between $\sigma$
-  and $\sigma '$.  The issue then seems to be that $F$ does not
-  resemble a full functor. Intuitively, a full functor would have the
-  feature that for any functional relation
+  sorts. In this case, $T$ describes a functional relation (namely
+  $x=_\sigma y$) between sorts $F(\sigma )$ and $F(\sigma ')$, whereas
+  $T\cup T'$ does not describe any functional relation between
+  $\sigma$ and $\sigma '$.  (The last claim follows from the fact that
+  $\Sigma\cup\Sigma '$-formulas can be split.) The issue then seems to
+  be that $F$ does not resemble a full functor. Intuitively, a full
+  functor would have the feature that for any functional relation
   $\chi :F(\sigma )\to F(\sigma ')$, there is a functional relation
   $\theta :\sigma \to \sigma '$ such that $F(\theta )\simeq
   \chi$. While there is indeed a $\Sigma\cup \Sigma '$-formula $\eta$
