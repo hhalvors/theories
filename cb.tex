@@ -152,11 +152,21 @@ $1\leq \neg a\vee b$.
   $F:C\to D$ is conservative on $\mathrm{Sub}_C(1)$, then $F$ is
   conservative. \end{conj}
 
-It should be the case (I think) that in a Boolean coherent category
-$C$, for each object $X$, there is a conservative lattice morphism
-$\mathrm{Sub}_C(X)\to \mathrm{Sub}_C(1)$ corresponding to the
+It should be the case (I think) that in a Boolean coherent (bcoh)
+category $C$, for each object $X$, there is a conservative lattice
+morphism $\mathrm{Sub}_C(X)\to \mathrm{Sub}_C(1)$ corresponding to the
 operation of taking a relation $\phi (\vec{x})\leq \psi (\vec{x})$ to
-the sentence $\forall \vec{x}(\phi (\vec{x})\to \psi (\vec{x}))$.
+the sentence $\forall \vec{x}(\phi (\vec{x})\to \psi (\vec{x}))$. In
+other words, the claim is that if
+$\forall \vec{x}(\phi (\vec{x})\to \psi (\vec{x}))$ is the maximal
+subobject of $1$, then $\phi (\vec{x})\leq \psi (\vec{x})$ as
+subjobjects of $X$. (It might be helpful to recall: if $f:X\to 1$ is
+the unique morphism to the terminal object, and
+$f^*:\mathrm{Sub}_C(1)\to \mathrm{Sub}_C(X)$ is the pullback, then $C$
+Boolean implies that
+$\forall _f:\mathrm{Sub}_C(X)\to \mathrm{Sub}_C(1)$ is the right
+adjoint of $f^*$, and hence $\forall _f$ is conservative as a lattice
+morphism.)
 
 \begin{question} Is the above a good definition of conservative
   translations for coherent theories?  Recall that the implications of
