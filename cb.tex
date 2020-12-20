@@ -128,9 +128,35 @@ natural transformation $M(\chi ):M(F)\Rightarrow M(G)$.
   subobjects of $F(X)$, then $\phi\leq\psi$ as subobjects of $X$
   \citep[see][p 195]{makkai1977}. \end{defn}
 
+We need to be careful here about whether the definition of a
+conservative translation generalizes straightforwardly to coherent
+logic. My intuition is that it does \emph{not}. In particular, for
+coherent logic, we want to say something like: $F$ is conservative
+means that if $F\phi (x)\vdash F\psi (x)$ then
+$\phi (x)\vdash\psi (x)$. (When $F$ changes variables, we will need a
+more sophisticated definition. In particular, we might want to use the
+notation $\phi\vdash _{\vec{x}}\psi$ for a sequent in the context
+$\vec{x}$.) For Boolean logic, the sequent $\phi (x)\vdash \psi (x)$
+can be replaced with the sequent
+$\vdash \forall x(\phi (x)\to \psi (x))$, and so the sentence-based
+definition suffices.
+
+\begin{defn} Let $C$ be a coherent category. We say that $C$ is
+  \emph{Boolean} just in case each subobject lattice in $C$ is a
+  Boolean lattice. \end{defn}
+
+Recall that if $B$ is a Boolean lattice, then $a\leq b$ iff
+$1\leq \neg a\vee b$.
+
 \begin{conj} Let $C$ and $D$ be Boolean coherent categories. If
   $F:C\to D$ is conservative on $\mathrm{Sub}_C(1)$, then $F$ is
   conservative. \end{conj}
+
+It should be the case (I think) that in a Boolean coherent category
+$C$, for each object $X$, there is a conservative lattice morphism
+$\mathrm{Sub}_C(X)\to \mathrm{Sub}_C(1)$ corresponding to the
+operation of taking a relation $\phi (\vec{x})\leq \psi (\vec{x})$ to
+the sentence $\forall \vec{x}(\phi (\vec{x})\to \psi (\vec{x}))$.
 
 \begin{question} Is the above a good definition of conservative
   translations for coherent theories?  Recall that the implications of
@@ -226,6 +252,12 @@ imply that it is an equivalence.
   one-half of an equivalence. Why is the composite $F\circ G$ not an
   equivalence? Isn't it a strong translation that is conservative and
   essentially surjective? \end{note}
+
+\begin{question} Is the theory $T\cup T'$ above a coproduct (or
+  product) in $\2{Th}$? There are canonical translations
+  $I_1:T\to T\cup T'$ and $I_2:T'\to T\cup T'$, and for any
+  translations $F_1:T\to T_0$ and $F_2:T'\to T_0$, it seems like there
+  is a unique translation $F_1+F_2:T\cup T'\to T_0$. \end{question}
 
 \begin{example} Let
   $\Sigma _1 = \{ \sigma _1,\sigma _2,\chi _1,\chi _2\}$, where
@@ -361,9 +393,19 @@ and $T_2$ have models of infinite cardinality.)
       $M$ is not isomorphic to $N$.
     \end{itemize} \end{note}
 
-\begin{defn} We say that a category $C$ is \emph{object-finite} just
-  in case it has only finitely many objects up to
-  isomorphism. \end{defn}
+  \begin{defn} We say that a category $C$ is \emph{object-finite} just
+    in case it has only finitely many objects up to isomorphism. We
+    say that $C$ is \emph{totally-finite} if it has finitely many
+    objects up to isomorphism, and finitely many arrows. \end{defn}
+
+  \begin{note} Recall that each theory $T$ corresponds to an
+    ultracategory $M(T)$. In many ways, an ultracategory is like a
+    category with a topology, where an ultralimit is like a limit
+    along an ultrafilter. Recall also that the theory $T$ is
+    reconstructable, up to equivalence, from the ultracategory
+    $M(T)$. Based on these facts, I conjecture that if $M(T_1)$ and
+    $M(T_2)$ are totally finite, then $T_1$ and $T_2$ are homotopy
+    equivalent iff they are categorically equivalent. \end{note}
 
 Let $T$ be a theory. If $M(T)$ is object-finite then the
 L{\"o}wenheim-Skolem theorem implies that every model of $T$ has
