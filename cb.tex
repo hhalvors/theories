@@ -120,12 +120,23 @@ natural transformation $M(\chi ):M(F)\Rightarrow M(G)$.
 \begin{defn} Let $F:T_1\to T_2$ be a translation. We say that
   $F:T_1\to T_2$ is \emph{conservative} just in case if
   $T_2\vdash F\phi$ then $T_1\vdash \phi$, for any
-  $\Sigma _1$-sentence $\phi$. \end{defn}
+  $\Sigma _1$-sentence $\phi$.
 
-\begin{question} Is the above a good definition for coherent theories?
-  Recall that the implications of a coherent theory cannot be captured
-  by sentences, but need (open) sequents. So should the definition of
-  ``conservative'' involve sequents?
+  In terms of coherent categories, a logical functor $F:C\to D$ is
+  \emph{conservative} just in case for any object $X$ of $C$, and
+  subobjects $\phi ,\psi$ of $X$, if $F(\phi )\leq F(\psi )$ as
+  subobjects of $F(X)$, then $\phi\leq\psi$ as subobjects of $X$
+  \citep[see][p 195]{makkai1977}. \end{defn}
+
+\begin{conj} Let $C$ and $D$ be Boolean coherent categories. If
+  $F:C\to D$ is conservative on $\mathrm{Sub}_C(1)$, then $F$ is
+  conservative. \end{conj}
+
+\begin{question} Is the above a good definition of conservative
+  translations for coherent theories?  Recall that the implications of
+  a coherent theory cannot be captured by sentences, but need (open)
+  sequents. So should the definition of ``conservative'' be formulated
+  in terms of sequents rather than in terms of sentences?
 
   In terms of syntactic categories: the above definition only involves
   subobjects of $1$. However, the notion of conservativity should
