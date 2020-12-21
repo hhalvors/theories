@@ -128,46 +128,6 @@ natural transformation $M(\chi ):M(F)\Rightarrow M(G)$.
   subobjects of $F(X)$, then $\phi\leq\psi$ as subobjects of $X$
   \citep[see][p 195]{makkai1977}. \end{defn}
 
-We need to be careful here about whether the definition of a
-conservative translation generalizes straightforwardly to coherent
-logic. My intuition is that it does \emph{not}. In particular, for
-coherent logic, we want to say something like: $F$ is conservative
-means that if $F\phi (x)\vdash F\psi (x)$ then
-$\phi (x)\vdash\psi (x)$. (When $F$ changes variables, we will need a
-more sophisticated definition. In particular, we might want to use the
-notation $\phi\vdash _{\vec{x}}\psi$ for a sequent in the context
-$\vec{x}$.) For Boolean logic, the sequent $\phi (x)\vdash \psi (x)$
-can be replaced with the sequent
-$\vdash \forall x(\phi (x)\to \psi (x))$, and so the sentence-based
-definition suffices.
-
-\begin{defn} Let $C$ be a coherent category. We say that $C$ is
-  \emph{Boolean} just in case each subobject lattice in $C$ is a
-  Boolean lattice. \end{defn}
-
-Recall that if $B$ is a Boolean lattice, then $a\leq b$ iff
-$1\leq \neg a\vee b$.
-
-\begin{conj} Let $C$ and $D$ be Boolean coherent categories. If
-  $F:C\to D$ is conservative on $\mathrm{Sub}_C(1)$, then $F$ is
-  conservative. \end{conj}
-
-It should be the case (I think) that in a Boolean coherent (bcoh)
-category $C$, for each object $X$, there is a conservative lattice
-morphism $\mathrm{Sub}_C(X)\to \mathrm{Sub}_C(1)$ corresponding to the
-operation of taking a formula $\phi (\vec{x})$ to the sentence
-$\forall \vec{x}\phi (\vec{x})$. By saying this morphism is
-``conservative'' I mean that if
-$\forall \vec{x}(\phi (\vec{x})\to \psi (\vec{x}))$ is the maximal
-subobject of $1$, then $\phi (\vec{x})\leq \psi (\vec{x})$ as
-subjobjects of $X$. (It might be helpful to recall: if $f:X\to 1$ is
-the unique morphism to the terminal object, and
-$f^*:\mathrm{Sub}_C(1)\to \mathrm{Sub}_C(X)$ is the pullback, then $C$
-Boolean implies that
-$\forall _f:\mathrm{Sub}_C(X)\to \mathrm{Sub}_C(1)$ is the right
-adjoint of $f^*$, and hence $\forall _f$ is conservative as a lattice
-morphism.)
-
 \begin{question} Is the above a good definition of conservative
   translations for coherent theories?  Recall that the implications of
   a coherent theory cannot be captured by sentences, but need (open)
@@ -176,7 +136,62 @@ morphism.)
 
   In terms of syntactic categories: the above definition only involves
   subobjects of $1$. However, the notion of conservativity should
-  involve all subobject lattices. \end{question}
+  involve all subobject lattices.  In particular, for coherent logic,
+  we want to say something like: $F$ is conservative means that if
+  $F\phi (x)\vdash F\psi (x)$ then $\phi (x)\vdash\psi (x)$. When $F$
+  changes variables, we will need a more sophisticated definition. In
+  particular, we might want to use the notation
+  $\phi\vdash _{\vec{x}}\psi$ for a sequent in the context
+  $\vec{x}$. A preliminary definition might look like:
+  \begin{quote} If $F\phi\vdash _{f(x)}F\psi$ when
+    $\phi\vdash _x\psi$, where $f$ is the variable mapping
+    corresponding to the reconstrual $F$. \end{quote} But note that
+  the conservativity requirement would be stronger if $\Sigma _2$ had
+  more function symbols. For example, suppose that $\chi (y,z)$ is a
+  functional relation relative to $T_2$, and suppose that
+  $(F\phi )(y),\chi (y,z)\vdash (F\psi )(z)$. If there were a
+  $\Sigma _2$ function symbol $\overline{\chi}$ corresponding to the
+  relation $\chi$, then we would have
+  $(F\phi )(y)\vdash (F\psi )(\overline{\chi}(y))$.
+  
+  For Boolean logic, the sequent $\phi (x)\vdash \psi (x)$ can be
+  replaced with the sequent $\vdash \forall x(\phi (x)\to \psi (x))$,
+  and so the sentence-based definition suffices. \end{question}
+
+\begin{defn} Let $C$ be a coherent category. We say that $C$ is
+  \emph{Boolean} just in case each subobject lattice in $C$ is a
+  Boolean lattice. \end{defn}
+
+Recall that if $B$ is a Boolean lattice, then $a\leq b$ iff
+$1\leq \neg a\vee b$.
+
+
+\begin{prop} If $C$ is a Boolean coherent category, then for each
+  object $x$ of $C$, there is a conservative lattice morphism
+  $\forall :\mathrm{Sub}_C(x)\to \mathrm{Sub}_C(1)$. \end{prop}
+
+\begin{proof} Let $f:x\to 1$ be the unique morphism to the terminal
+  object, and let $f^*:\mathrm{Sub}_C(1)\to \mathrm{Sub}_C(x)$ be the
+  corresponding pullback of subobjects. Then $C$ Boolean implies that
+  there is a right adjoint
+  $\forall _f:\mathrm{Sub}_C(x)\to \mathrm{Sub}_C(1)$ to $f^*$, and
+  hence $\forall _f$ is conservative as a lattice morphism. In
+  particular, if $\forall (a)=1$ then $a=x$. \end{proof}
+
+\begin{prop} Let $C$ and $D$ be Boolean coherent categories, and let
+  $F:C\to D$ be a logical functor. If $F:C\to D$ is conservative on
+  $\mathrm{Sub}_C(1)$, then $F$ is conservative. \end{prop}
+
+\begin{proof} Let $x$ be an object of $C$, and let
+  $a,b\in \mathrm{Sub}_C(x)$. If $Fa\leq Fb$ then
+  $\forall (Fa)\leq \forall (Fb)$. Since $F$ is logical,
+  $F(\forall a)\leq F(\forall b)$, and since $F$ is conservative on
+  $\mathrm{Sub}_C(1)$, $\forall a\leq \forall b$. Since
+  $\forall :\mathrm{Sub}_C(x)\to \mathrm{Sub}_C(1)$ is conservative,
+  $a\leq b$. [TO DO: Double check that logical functors commute with
+  $\forall$.]
+  \end{proof}
+
 
 The following example shows that in the $2$-category of theories, a
 translation's being conservative and essentially surjective does not
