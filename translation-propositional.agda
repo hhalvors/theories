@@ -33,6 +33,14 @@ f "q" proofQ = Atom "a" {proofA} ∨ Atom "b" {proofB}  -- maps "q" to a disjunc
 Reconstrual : Signature → Signature → Set₁
 Reconstrual X Y = (x : String) → Elem x (Signature.atoms X) → Proposition Y
 
+extendReconstrual : ∀ {X Y} → Reconstrual X Y → (Proposition X → Proposition Y)
+extendReconstrual f (Atom x elemX) = f x elemX
+extendReconstrual f (p ∧ q) = extendReconstrual f p ∧ extendReconstrual f q
+extendReconstrual f (p ∨ q) = extendReconstrual f p ∨ extendReconstrual f q
+extendReconstrual f (p → q) = extendReconstrual f p → extendReconstrual f q
+extendReconstrual f (¬ p) = ¬ extendReconstrual f p
+
+
 
 
 
